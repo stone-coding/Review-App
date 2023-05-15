@@ -1,4 +1,6 @@
-exports.createUser =(req, res) => {
-    res.send("<h1>I will create later</h1>")
+exports.create =(req, res) => {
+    console.log(req.body);
+    // get the resp json data request by the user 
+    res.json({user:req.body})
 }
 
