@@ -1,20 +1,43 @@
-const { check, validationResult } = require('express-validator');
+const { check, validationResult } = require("express-validator");
 
 exports.useValidtor = [
-    check("name").trim().not().isEmpty().withMessage("Name is missing!"),
+  check("name").trim().not().isEmpty().withMessage("Name is missing!"),
+  check("email").normalizeEmail().isEmail().withMessage("Email is invalid!"),
+  check("password")
+    .trim()
+    .not()
+    .isEmpty()
+    .withMessage("Password is missing!")
+    .isLength({ min: 8, max: 20 })
+    .withMessage("Password must be 8 to 20 characters long!"),
+];
+
+exports.signInValidtor = [
     check("email").normalizeEmail().isEmail().withMessage("Email is invalid!"),
-    check("password").trim().not().isEmpty().withMessage("Password is missing!").isLength({min:8, max:20}).withMessage("Password must be 8 to 20 characters long!")
-]
+    check("password")
+      .trim()
+      .not()
+      .isEmpty()
+      .withMessage("Password is missing!")
+  ];
+
+
 
 exports.validatePassword = [
-    check("newPassword").trim().not().isEmpty().withMessage("Password is missing!").isLength({min:8, max:20}).withMessage("Password must be 8 to 20 characters long!")
-]
+  check("newPassword")
+    .trim()
+    .not()
+    .isEmpty()
+    .withMessage("Password is missing!")
+    .isLength({ min: 8, max: 20 })
+    .withMessage("Password must be 8 to 20 characters long!"),
+];
 
-exports.validate = (req, res, next)=> {
-    const error = validationResult(req).array()
-    // error.length indicates error array is not empty(at least 1 error occurs)
-    if(error.length){
-        return res.json({error:error[0].msg})
-    }
-    next()
-}
+exports.validate = (req, res, next) => {
+  const error = validationResult(req).array();
+  // error.length indicates error array is not empty(at least 1 error occurs)
+  if (error.length) {
+    return res.json({ error: error[0].msg });
+  }
+  next();
+};
