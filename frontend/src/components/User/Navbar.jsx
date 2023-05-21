@@ -1,10 +1,12 @@
 import React from 'react'
 import {BsFillSunFill} from 'react-icons/bs'
+import Container from '../Container'
+
 
 export default function Navbar() {
   return (
-    <div className="bg-secondary">
-        <div className="text-white max-w-screen-xl mx-auto p-2">
+    <div className="bg-secondary shadow-sm shadow-gray-50">
+        <Container className=" p-2">
             
             <div className="flex justify-between items-center">
                 <img src="./logo.png" alt="" className='h-10'/>
@@ -31,7 +33,7 @@ export default function Navbar() {
 
 
 
-        </div>
+        </Container>
     </div>
   )
 }
