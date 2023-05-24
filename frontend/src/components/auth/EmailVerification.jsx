@@ -4,26 +4,62 @@ import Submit from "../form/Submit";
 import Title from "../form/Title";
 
 const OTP_LENGTH = 6;
+let currentOTPIndex;
 
 export default function EmailVerification() {
   const [otp, setOtp] = useState(new Array(OTP_LENGTH).fill(""));
+
+  // when type input this makes input arrays to a single input(wired) issue.
+  // one solution is providing a reference to next input as reference hook
   const [activeOptIndex, setActiveOptIndex] = useState(0);
 
   const inputRef = useRef()
 
-  const handleOtpChange = ({target}, index) => {
-    const {value} = target
-    
-    // when type input this makes input arrays to a single input(wired) issue.
-    // one solution is providing a reference to next input as reference hook
-    // setOtp([value])
+  //move OTP number forward
+  const focusNextInputField = (index) => {
     setActiveOptIndex(index + 1)
   }
 
+  //move OTP number backward
+  const focusBackInputField = (index) => {
+    let nextIndex;
+    const diff = index - 1;
+    nextIndex = diff !==0 ? diff : 0;
+    setActiveOptIndex(nextIndex)
+  }
+
+  const handleKeyDown = ({key}, index) => {
+    currentOTPIndex = index;
+    if (key === 'Backspace') {
+      focusBackInputField(currentOTPIndex)
+    }
+    if (key === 13) {
+      focusNextInputField(currentOTPIndex)
+    }
+  }
+
+  //dynamically track OTP and limit OTP 1 number per field
+  const handleOtpChange = ({target}) => {
+    const { value } = target
+    const newOtp = [...otp];
+    newOtp[currentOTPIndex] = value.substring(value.length - 1, value.length);
+    
+    if(!value) focusBackInputField(currentOTPIndex);
+    else focusNextInputField(currentOTPIndex);
+    
+    setOtp([...newOtp])
+    console.log(value);
+  }
+
+  /*
+   due to every input OTP number is empty before a user's keystroke, '?' marks access the object's(on the left)
+   properity. It returns undefined when obj is empty and obj is false. \
+   input focus dependent on the change of activeOptIndex 
+  */
   useEffect(() => {
     inputRef.current?.focus();
   }, [activeOptIndex])
-  console.log(inputRef);
+
 
   return (
     <div className="fixed inset-0 bg-primary -z-10 flex justify-center items-center">
@@ -45,8 +81,9 @@ export default function EmailVerification() {
                   key={index}
                   type="number"
                   value = {otp[index] || ""}
-                  onChange={(e)=> handleOtpChange(e,index)}
-                  className="w-12 h-12 border-2 border-dark-subtle focus: border-white rounded 
+                  onChange={handleOtpChange}
+                  onKeyDown={(e)=> handleKeyDown(e,index)}
+                  className="w-12 h-12 border-2 border-dark-subtle focus:border-white rounded 
                 bg-transparent outline-none text-center text-white font-semibold text-xl"
                 />
               );
