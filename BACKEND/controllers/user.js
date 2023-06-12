@@ -70,11 +70,11 @@ exports.verifyEmail = async (req, res) => {
   // check user existance by user_id and user verification condition
   const user = await User.findById(userId);
   if (!user) return sendError(res, "User not found!", 404);
-  if (user.isVerified) return sendError(res, "User is already verified");
+  if (user.isVerified) return sendError(res, "User is already verified!");
 
   // find the token with given user id from user
   const token = await EmailVerificationToken.findOne({ owner: userId });
-  if (!token) return sendError(res, "Token not found");
+  if (!token) return sendError(res, "Token not found!");
 
   // compare OTP in db and user entered
   const isMatched = await token.compareToken(OTP);
@@ -95,7 +95,7 @@ exports.verifyEmail = async (req, res) => {
     html: "<h1>Welcome to our app and thanks for choosing us</h1>",
   });
 
-  res.json({ messsage: "Your email is verified!" });
+  res.json({ message: "Your email is verified!" });
 };
 
 /*
