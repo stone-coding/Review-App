@@ -1,32 +1,36 @@
-const express = require('express')
-require('express-async-errors');
+const express = require("express");
+require("express-async-errors");
 
-const userRouter = require('./routes/user');
-const { errorHandler } = require('./middlewares/error');
+const userRouter = require("./routes/user");
+const { errorHandler } = require("./middlewares/error");
+const cors = require("cors");
+const { handleNotFound } = require("./utils/helper");
+
 require("dotenv").config();
-require("./db")
+require("./db");
 
-const app = express()
+const app = express();
+app.use(cors());
 // mount the data request read by the request from user
-app.use(express.json())
-app.use('/api/user',userRouter);
+app.use(express.json());
+app.use("/api/user", userRouter);
 
-app.use(errorHandler)
+app.use('/*',handleNotFound)
 
-// app.post("/sign-in", 
+app.use(errorHandler);
+
+// app.post("/sign-in",
 //     (req, res, next)=>{
 //     const {email, password} = req.body
 //     if (!email || !password )
 //         return res.json({error:"email/password is missing"})
-//         next();       
-    
+//         next();
+
 // },
 // (req, res ) =>{
 //     res.send("<h1>Hello I am from you backend about page</h1>")
 // })
 
-app.listen(8000, ()=>{
-    console.log('the port is listening on port 8080');
-})
-
-
+app.listen(8000, () => {
+  console.log("the port is listening on port 8080");
+});

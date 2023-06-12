@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+
+import { useLocation, useNavigate } from "react-router-dom";
 import Container from "../Container";
 import Submit from "../form/Submit";
 import Title from "../form/Title";
@@ -16,6 +18,12 @@ export default function EmailVerification() {
   const [activeOptIndex, setActiveOptIndex] = useState(0);
 
   const inputRef = useRef()
+
+  //useLocation returns the current user's state from signup to email verification 
+  const {state} = useLocation();
+  const user = state?.user
+
+  const navigate = useNavigate()
 
   //move OTP number forward
   const focusNextInputField = (index) => {
@@ -61,6 +69,14 @@ export default function EmailVerification() {
   useEffect(() => {
     inputRef.current?.focus();
   }, [activeOptIndex])
+
+  /**
+   * if user goes to verification before they signup. A not found page 
+   * will prevent not signup user goes to Email verifcation page
+   */
+  useEffect(()=> {
+    if(!user) navigate('/not-found')
+  }, [])
 
 
   return (

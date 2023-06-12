@@ -18,7 +18,7 @@ export default function Navbar() {
                 <ul className='flex items-center space-x-5'>
                     <li>
                         <button onClick={toggleTheme} className='dark:bg-white bg-dark-subtle p-1 rounded'>
-                            <BsFillSunFill className='text-secondary' size={24}/>
+                            <BsFillSunFill className='text-secondary2' size={24}/>
                         </button>
                     </li>
 
