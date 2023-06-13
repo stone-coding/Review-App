@@ -7,7 +7,7 @@ import Title from "../form/Title";
 import FormContainer from "./FormContainer";
 import { commonModalClasses } from "../../utils/theme";
 import { verifyUserEmail } from "../../api/auth";
-import { useNotification } from "../../hooks";
+import { useAuth, useNotification } from "../../hooks";
 
 const OTP_LENGTH = 6;
 let currentOTPIndex;
@@ -30,15 +30,15 @@ export default function EmailVerification() {
   const [activeOptIndex, setActiveOptIndex] = useState(0);
 
   const inputRef = useRef();
-  const {updateNotification} = useNotification();
+  const { updateNotification } = useNotification();
+  const { isAuth, authInfo } = useAuth();
+  const { isLoggedIn} = authInfo
 
   //useLocation returns the current user's state from signup to email verification
   const { state } = useLocation();
   const user = state?.user;
 
   const navigate = useNavigate();
-
-  
 
   //move OTP number forward
   const focusNextInputField = (index) => {
@@ -84,13 +84,19 @@ export default function EmailVerification() {
     console.log(otp);
 
     //submit OTP
-    const { error, message } = await verifyUserEmail({
-      OTP: otp.join(''),
+    const {
+      error,
+      message,
+      user: userResponse,
+    } = await verifyUserEmail({
+      OTP: otp.join(""),
       userId: user.id,
     });
-    if (error) return updateNotification("errror",error);
+    if (error) return updateNotification("errror", error);
 
-    updateNotification("success",message);
+    updateNotification("success", message);
+    localStorage.setItem("auth-token", userResponse.token);
+    isAuth()
   };
 
   /*
@@ -105,10 +111,14 @@ export default function EmailVerification() {
   /**
    * if user goes to verification before they signup. A not found page
    * will prevent not signup user goes to Email verifcation page
+   * 
+   * if user already logged in(sign up), they will move to home page 
+   * after email verification 
    */
   useEffect(() => {
     if (!user) navigate("/not-found");
-  }, [user]);
+    if (isLoggedIn) navigate("/");
+  }, [user, isLoggedIn]);
 
   return (
     <FormContainer>

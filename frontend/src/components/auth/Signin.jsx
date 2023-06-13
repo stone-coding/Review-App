@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "../Container";
 import Title from "../form/Title";
 import FormInput from "../form/FormInput";
@@ -7,12 +7,14 @@ import CustomLink from "../CustomLink";
 import { commonModalClasses } from "../../utils/theme";
 import FormContainer from "./FormContainer";
 import { useAuth, useNotification } from "../../hooks";
+import { useNavigate } from "react-router";
+import { isValidEmail } from "../../utils/helper";
 
 const validateUserInfo = ({ email, password }) => {
-  const isVaildEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  // const isVaildEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
   if (!email.trim()) return { ok: false, error: "Email is missing!" };
-  if (!isVaildEmail.test(email)) return { ok: false, error: "Invalid email!" };
+  if (!isValidEmail(email)) return { ok: false, error: "Invalid email!" };
 
   if (!password.trim()) return { ok: false, error: "Password is missing!" };
   if (password.length < 8)
@@ -26,11 +28,11 @@ export default function Signin() {
     email: "",
     password: "",
   });
-
+  const navigate = useNavigate()
   const { updateNotification } = useNotification();
   const { handleLogin, authInfo} = useAuth();
-  const { isPending} = authInfo
-  console.log(authInfo);
+  const { isPending, isLoggedIn} = authInfo
+
 
   const handleChange = ({ target }) => {
     const { value, name } = target;
@@ -44,6 +46,10 @@ export default function Signin() {
     if (!ok) return updateNotification("error", error);
     handleLogin(userInfo.email, userInfo.password)
   };
+
+  useEffect(()=> {
+    if(isLoggedIn) navigate("/") // we want to move our user to somewhere else
+  }, [isLoggedIn])
 
   return (
     <FormContainer>

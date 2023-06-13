@@ -165,7 +165,7 @@ exports.forgetPassword = async (req, res) => {
   const newPasswordToken = await PasswordResetToken({ owner: user._id, token });
   await newPasswordToken.save();
 
-  const resetPasswordUrl = `http://localhost:3000/reset-password?token=${token}&id=${user._id}`;
+  const resetPasswordUrl = `http://localhost:3000/auth/reset-password?token=${token}&id=${user._id}`;
 
   //send OTP to our user
   var transport = generateMailTransporter();

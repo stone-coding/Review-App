@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Container from "../Container";
@@ -9,17 +9,18 @@ import CustomLink from "../CustomLink";
 import { commonModalClasses } from "../../utils/theme";
 import FormContainer from "./FormContainer";
 import { createUser } from "../../api/auth";
-import { useNotification } from "../../hooks";
+import { useAuth, useNotification } from "../../hooks";
+import { isValidEmail } from "../../utils/helper";
 
 const validateUserInfo = ({ name, email, password }) => {
-  const isVaildEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  // const isVaildEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   const isValidName = /^[a-z A-Z]+$/;
 
   if (!name.trim()) return { ok: false, error: "Name is missing!" };
   if (!isValidName.test(name)) return { ok: false, error: "Invalid name!" };
 
   if (!email.trim()) return { ok: false, error: "Email is missing!" };
-  if (!isVaildEmail.test(email)) return { ok: false, error: "Invalid email!" };
+  if (!isValidEmail(email)) return { ok: false, error: "Invalid email!" };
 
   if (!password.trim()) return { ok: false, error: "Password is missing!" };
   if (password.length < 8)
@@ -38,6 +39,8 @@ export default function Signup() {
   const navigate = useNavigate()
 
   const {updateNotification} = useNotification()
+  const { handleLogin, authInfo} = useAuth();
+  const { isPending, isLoggedIn} = authInfo
 
   const handleChange = ({ target }) => {
     const { value, name } = target;
@@ -63,6 +66,10 @@ export default function Signup() {
     });
     
   };
+
+  useEffect(()=> {
+    if(isLoggedIn) navigate("/") // we want to move our user to somewhere else
+  }, [isLoggedIn])
 
   //user info with name email password
   const { name, email, password } = userInfo;
