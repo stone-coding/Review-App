@@ -7,6 +7,7 @@ import Title from "../form/Title";
 import FormContainer from "./FormContainer";
 import { commonModalClasses } from "../../utils/theme";
 import { verifyUserEmail } from "../../api/auth";
+import { useNotification } from "../../hooks";
 
 const OTP_LENGTH = 6;
 let currentOTPIndex;
@@ -29,12 +30,15 @@ export default function EmailVerification() {
   const [activeOptIndex, setActiveOptIndex] = useState(0);
 
   const inputRef = useRef();
+  const {updateNotification} = useNotification();
 
   //useLocation returns the current user's state from signup to email verification
   const { state } = useLocation();
   const user = state?.user;
 
   const navigate = useNavigate();
+
+  
 
   //move OTP number forward
   const focusNextInputField = (index) => {
@@ -75,7 +79,7 @@ export default function EmailVerification() {
     e.preventDefault();
 
     if (!isValidOTP(otp)) {
-      return console.log("Invald OTP");
+      return updateNotification("error", "invalid OTP");
     }
     console.log(otp);
 
@@ -84,9 +88,9 @@ export default function EmailVerification() {
       OTP: otp.join(''),
       userId: user.id,
     });
-    if (error) return console.log(error);
+    if (error) return updateNotification("errror",error);
 
-    console.log(message);
+    updateNotification("success",message);
   };
 
   /*
