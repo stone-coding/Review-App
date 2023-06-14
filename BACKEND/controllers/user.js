@@ -205,6 +205,7 @@ exports.resetPassword = async (req, res) => {
     );
 
   user.password = newPassword;
+  await user.save()
 
   //delete the Password reset token in the db
   await PasswordResetToken.findByIdAndDelete(req.resetToken._id);
