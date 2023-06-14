@@ -79,9 +79,7 @@ export const getIsAuth = async (token) => {
 
 export const forgetPassword = async (email) => {
   try {
-    const { data } = await client.post("/user/forget-password", {
-      email:email
-    });
+    const { data } = await client.post("/user/forget-password", {email});
     return data;
   } catch (error) {
     const { response } = error;
@@ -114,7 +112,18 @@ export const verifyPasswordResetToken = async (token, userId) => {
       return data;
     } catch (error) {
       const { response } = error;
-      // ?. optional chanining operatial return undefined or null if obj on left not exist
+      if (response?.data) return response.data;
+  
+      return { error: error.message || error };
+    }
+  };
+
+  export const resendEmailVerificationToken = async (userId) => {
+    try {
+      const { data } = await client.post("/user/resend-email-verification-token", {userId});
+      return data;
+    } catch (error) {
+      const { response } = error;
       if (response?.data) return response.data;
   
       return { error: error.message || error };

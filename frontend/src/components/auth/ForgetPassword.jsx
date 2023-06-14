@@ -13,7 +13,6 @@ import { useNotification } from "../../hooks";
 
 export default function ForgetPassword() {
   const [email, setEmail] = useState("");
-
   const {updateNotification} = useNotification()
 
   const handleChange = ({ target }) => {

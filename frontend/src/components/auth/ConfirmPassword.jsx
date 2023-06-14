@@ -65,7 +65,7 @@ export default function ConfirmPassword() {
     const { error, message } = await resetPassword({
       newPassword: password.one,
       userId: id,
-      token,
+      token: token,
     });
 
     if (error) return updateNotification("error", error);
