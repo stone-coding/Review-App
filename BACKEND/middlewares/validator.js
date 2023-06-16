@@ -13,15 +13,9 @@ exports.useValidtor = [
 ];
 
 exports.signInValidtor = [
-    check("email").normalizeEmail().isEmail().withMessage("Email is invalid!"),
-    check("password")
-      .trim()
-      .not()
-      .isEmpty()
-      .withMessage("Password is missing!")
-  ];
-
-
+  check("email").normalizeEmail().isEmail().withMessage("Email is invalid!"),
+  check("password").trim().not().isEmpty().withMessage("Password is missing!"),
+];
 
 exports.validatePassword = [
   check("newPassword")
@@ -31,6 +25,20 @@ exports.validatePassword = [
     .withMessage("Password is missing!")
     .isLength({ min: 8, max: 20 })
     .withMessage("Password must be 8 to 20 characters long!"),
+];
+
+exports.actorInfoValidator = [
+  check("name").trim().not().isEmpty().withMessage("Actor name is a required field!"),
+  check("about")
+    .trim()
+    .not()
+    .isEmpty()
+    .withMessage("About is a required field!"),
+  check("gender")
+    .trim()
+    .not()
+    .isEmpty()
+    .withMessage("Gender is a required field!"),
 ];
 
 exports.validate = (req, res, next) => {

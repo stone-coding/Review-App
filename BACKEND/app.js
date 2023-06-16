@@ -1,7 +1,7 @@
 const express = require("express");
 require("express-async-errors");
-
 const userRouter = require("./routes/user");
+const actorRouter = require("./routes/actor")
 const { errorHandler } = require("./middlewares/error");
 const cors = require("cors");
 const { handleNotFound } = require("./utils/helper");
@@ -14,8 +14,8 @@ app.use(cors());
 // mount the data request read by the request from user
 app.use(express.json());
 app.use("/api/user", userRouter);
-
-app.use('/*',handleNotFound)
+app.use("/api/actor", actorRouter);
+app.use("/*", handleNotFound);
 
 app.use(errorHandler);
 
