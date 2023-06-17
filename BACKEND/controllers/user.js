@@ -205,7 +205,7 @@ exports.resetPassword = async (req, res) => {
     );
 
   user.password = newPassword;
-  await user.save()
+  await user.save();
 
   //delete the Password reset token in the db
   await PasswordResetToken.findByIdAndDelete(req.resetToken._id);
@@ -237,10 +237,12 @@ exports.signIn = async (req, res) => {
   const matched = await user.comparePassword(password);
   if (!matched) return sendError(res, "Email/Password mismatch!");
 
-  const { _id, name, isVerified } = user;
+  const { _id, name, role, isVerified } = user;
 
   //found user and pwd matched
   const jwtToekn = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
 
-  res.json({ user: { id: _id, name, email, token: jwtToekn, isVerified } });
+  res.json({
+    user: { id: _id, name, role, email, token: jwtToekn, isVerified },
+  });
 };
