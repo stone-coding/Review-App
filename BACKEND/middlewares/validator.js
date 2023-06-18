@@ -83,7 +83,7 @@ exports.validateMovie = [
     .withMessage("Cast must be an array of strings!")
     .custom((cast) => {
       for (let c of cast) {
-        if (!isValidObjectId(c.id)) throw Error("Invalid cast id inside cast!");
+        if (!isValidObjectId(c.actor)) throw Error("Invalid cast id inside cast!");
         if (!c.roleAs?.trim()) throw Error("Role as is missing inside cast!");
         if (typeof c.leaderActor !== "boolean")
           throw Error(
@@ -93,9 +93,9 @@ exports.validateMovie = [
       }
 
     }),
-  check("trailerInfo")
+  check("trailer")
     .isObject()
-    .withMessage("trailer info must be an object with url and public_id!")
+    .withMessage("trailer must be an object with url and public_id!")
     .custom(({ url, public_id }) => {
       try {
         const result = new URL(url);
@@ -115,10 +115,10 @@ exports.validateMovie = [
       }
     }),
 
-  check("poster").custom((_, { req }) => {
-    if (!req.file) throw Error("Poster file is missing!");
-    return true;
-  }),
+  // check("poster").custom((_, { req }) => {
+  //   if (!req.file) throw Error("Poster file is missing!");
+  //   return true;
+  // }),
 ];
 
 exports.validate = (req, res, next) => {
