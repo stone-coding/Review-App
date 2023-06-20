@@ -9,6 +9,7 @@ const {
 const { parseData } = require("../utils/helper");
 const { validateMovie, validate } = require("../middlewares/validator");
 
+
 const router = express.Router();
 
 router.post(
