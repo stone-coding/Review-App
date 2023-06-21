@@ -33,8 +33,6 @@ exports.createMovie = async (req, res) => {
     language,
   } = body;
 
-  console.log(res.body);
-  res.send("ok");
 
   const newMovie = new Movie({
     title,
@@ -110,7 +108,7 @@ exports.updateMovieWithoutPoster = async (req, res) => {
   if (!isValidObjectId(movieId)) return sendError(res, "Invalid Movie ID!");
 
   const movie = await Movie.findById(movieId);
-  if (!movie) return sendError(res, "Movie Not Founf!", 404);
+  if (!movie) return sendError(res, "Movie Not Found!", 404);
 
   const {
     title,
