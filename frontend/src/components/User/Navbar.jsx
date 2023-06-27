@@ -37,9 +37,12 @@ export default function Navbar() {
 
             <li>
               {isLoggedIn ? (
-                <button 
-                onClick={handleLogout}
-                className="text-white font-semibold text-lg">Log out</button>
+                <button
+                  onClick={handleLogout}
+                  className="text-white font-semibold text-lg"
+                >
+                  Log out
+                </button>
               ) : (
                 <Link
                   className="text-white font-semibold text-lg"
