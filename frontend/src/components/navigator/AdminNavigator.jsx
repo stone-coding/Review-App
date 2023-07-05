@@ -5,12 +5,14 @@ import Movies from "../admin/Movies";
 import Actors from "../admin/Actors";
 import NotFound from "../NotFound";
 import Narbar from "../admin/Narbar";
+import Header from "../admin/Header";
 
 export default function AdminNavigator() {
   return (
-    <div className="flex">
+    <div className="flex dark:bg-primary bg-white">
       <Narbar />
       <div className="flex-1 p-2 max-w-screen-xl">
+        <Header/>
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/movies" element={<Movies />} />
