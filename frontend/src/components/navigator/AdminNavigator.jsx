@@ -12,15 +12,14 @@ export default function AdminNavigator() {
     <div className="flex dark:bg-primary bg-white">
       <Narbar />
       <div className="flex-1 p-2 max-w-screen-xl">
-        <Header/>
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/actors" element={<Actors />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+        <Header onAddMovieClick={() => console.log("add the movie")} />
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/actors" element={<Actors />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </div>
-
     </div>
   );
 }
