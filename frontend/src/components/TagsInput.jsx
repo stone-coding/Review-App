@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 
-export default function TagsInput() {
+export default function TagsInput({ name, onChange }) {
   const [tag, setTag] = useState("");
   const [tags, setTags] = useState([]);
 
@@ -11,7 +11,10 @@ export default function TagsInput() {
   const handleOnChange = ({ target }) => {
     const { value } = target;
     if (value !== ",") setTag(value);
+
+    onChange(tags);
   };
+
 
   const handleKeyDown = ({ key }) => {
     if (key === "," || key === "Enter") {
@@ -40,6 +43,10 @@ export default function TagsInput() {
     input.current.scrollIntoView();
   }, [tag]);
 
+  useEffect(() => {
+    onChange(tags)
+  }, [tags]);
+
   const handleOnFcus = () => {
     tagsInput.current.classList.remove(
       "dark:border-dark-subtle",
@@ -50,10 +57,10 @@ export default function TagsInput() {
 
   const handleOnBlur = () => {
     tagsInput.current.classList.add(
-        "dark:border-dark-subtle",
-        "border-light-subtle"
-      );
-      tagsInput.current.classList.remove("dark:border-white", "border-primary");
+      "dark:border-dark-subtle",
+      "border-light-subtle"
+    );
+    tagsInput.current.classList.remove("dark:border-white", "border-primary");
   };
 
   return (
@@ -72,6 +79,7 @@ export default function TagsInput() {
         ))}
         <input
           ref={input}
+          id={name}
           type="text"
           className="h-full flex-grow bg-transparent outline-none dark:text-white"
           placeholder="Tag-x"
