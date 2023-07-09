@@ -18,6 +18,7 @@ input[type=number] {
     75% { transform: scale(0.95, 1.05); }
   }
 
+  
   .bounce {
     animation: bounce 2s ease ;
   }
