@@ -13,20 +13,31 @@ export default function LiveSearch({
   onChange = null,
   onSelect = null,
 }) {
-  const [displaySearch, setdisplaySearch] = useState(false);
+  const [displaySearch, setDisplaySearch] = useState(false);
   const [focusedIndex, setFocusedIndex] = useState(-1); // when move the scroll bar array we do not want focus on any index
 
   const handleOnFocus = () => {
-    if (results.length) setdisplaySearch(true);
+    if (results.length) setDisplaySearch(true);
   };
+  
 
-  const handleOnBlur = () => {
-    setdisplaySearch(false);
+  const closeSearch = () => {
+    setDisplaySearch(false);
     setFocusedIndex(-1);
   };
 
+  const handleOnBlur = () => {
+    setTimeout(() => {
+        closeSearch();
+    },100)
+  };
+
   const handleSelection = (selectedItem) => {
-    onSelect(selectedItem);
+    if(selectedItem) {
+        onSelect(selectedItem);
+        closeSearch()
+    }
+
   };
 
   const handleKeyDown = ({ key }) => {
@@ -44,6 +55,8 @@ export default function LiveSearch({
       nextCount = (focusedIndex + results.length - 1) % results.length;
     }
 
+    if (key === "Escape") return closeSearch(results[focusedIndex]);
+
     if (key === "Enter") return handleSelection(results[focusedIndex]);
 
     setFocusedIndex(nextCount);
@@ -59,6 +72,7 @@ export default function LiveSearch({
     <div className="relative">
       <input
         type="text"
+        autocomplete="off"
         id={name}
         name={name}
         className={getInputStyle()}
