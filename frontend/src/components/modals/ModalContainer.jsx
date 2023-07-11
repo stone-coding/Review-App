@@ -1,5 +1,5 @@
 import React from "react";
-
+// A container covers the movie form to peform generes
 export default function ModalContainer({
   visible,
   ignoreContainer,

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 
-export default function TagsInput({ name, onChange }) {
+export default function TagsInput({ name, value, onChange }) {
   const [tag, setTag] = useState("");
   const [tags, setTags] = useState([]);
 
@@ -40,14 +40,18 @@ export default function TagsInput({ name, onChange }) {
   };
 
   useEffect(() => {
-    input.current.scrollIntoView();
+    input.current?.scrollIntoView();
   }, [tag]);
+
+  useEffect(() => {
+    if(value.length) setTags(value)
+  }, [value]);
 
   useEffect(() => {
     onChange(tags)
   }, [tags]);
 
-  const handleOnFcus = () => {
+  const handleOnFocus = () => {
     tagsInput.current.classList.remove(
       "dark:border-dark-subtle",
       "border-light-subtle"
@@ -85,7 +89,7 @@ export default function TagsInput({ name, onChange }) {
           placeholder="Tag-x"
           value={tag}
           onChange={handleOnChange}
-          onFocus={handleOnFcus}
+          onFocus={handleOnFocus}
           onBlur={handleOnBlur}
         />
       </div>

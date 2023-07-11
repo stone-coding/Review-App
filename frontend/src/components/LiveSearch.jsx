@@ -15,11 +15,11 @@ export default function LiveSearch({
 }) {
   const [displaySearch, setDisplaySearch] = useState(false);
   const [focusedIndex, setFocusedIndex] = useState(-1); // when move the scroll bar array we do not want focus on any index
+  const [defaultValue, setDefaultValue] = useState("");
 
   const handleOnFocus = () => {
     if (results.length) setDisplaySearch(true);
   };
-  
 
   const closeSearch = () => {
     setDisplaySearch(false);
@@ -28,16 +28,15 @@ export default function LiveSearch({
 
   const handleOnBlur = () => {
     setTimeout(() => {
-        closeSearch();
-    },100)
+      closeSearch();
+    }, 100);
   };
 
   const handleSelection = (selectedItem) => {
-    if(selectedItem) {
-        onSelect(selectedItem);
-        closeSearch()
+    if (selectedItem) {
+      onSelect(selectedItem);
+      closeSearch();
     }
-
   };
 
   const handleKeyDown = ({ key }) => {
@@ -68,11 +67,20 @@ export default function LiveSearch({
       : commonInputClass + " rounded border-2 p-1 text-lg";
   };
 
+  const handleChange = (e) => {
+    setDefaultValue(e.target.value);
+    onChange && onChange(e);
+  };
+
+  useEffect(() => {
+    if (value) setDefaultValue(value);
+  }, [value]);
+
   return (
     <div className="relative">
       <input
         type="text"
-        autocomplete="off"
+        autoComplete="off"
         id={name}
         name={name}
         className={getInputStyle()}
@@ -80,8 +88,8 @@ export default function LiveSearch({
         onFocus={handleOnFocus}
         onBlur={handleOnBlur}
         onKeyDown={handleKeyDown}
-        value={value}
-        onChange={onChange}
+        value={defaultValue}
+        onChange={handleChange}
       />
       <SearchResult
         focusedIndex={focusedIndex}
