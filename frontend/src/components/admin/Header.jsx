@@ -7,8 +7,8 @@ export default function Header({onAddMovieClick, onAddActorClick}) {
   const [showOptions, setShowOptions] = useState(false);
   const { toggleTheme } = useTheme();
   const options = [
-    { title: "Add Movie", onclick: onAddMovieClick },
-    { title: "Add Actor", onclick: onAddActorClick },
+    { title: "Add Movie", onClick: onAddMovieClick },
+    { title: "Add Actor", onClick: onAddActorClick },
   ];
 
   return (
@@ -31,7 +31,7 @@ export default function Header({onAddMovieClick, onAddActorClick}) {
         {/* setShowOptions(true) to prevent the animation returns null starts first  */}
         <button
           onClick={() => setShowOptions(true)}
-          className="flex items-center space-x-2 dark:border-dark-subtle border-light-subtled
+          className="flex items-center space-x-2 dark:border-dark-subtle border-light-subtle
           dark:text-dark-subtle text-light-subtle
            
         hover:opacity-80 transition font-semibold border-2 rounded text-lg px-3 py-1"
@@ -58,8 +58,9 @@ const CreateOptions = ({ options, visible, onClose }) => {
     const handleClose = (e) => {
       // component is not rendered
       if (!visible) return;
+      
       const { parentElement, id } = e.target;
-
+  
       if (parentElement.id === containerID || id === containerID) return;
 
       if (container.current) {
@@ -91,8 +92,8 @@ const CreateOptions = ({ options, visible, onClose }) => {
       className="absolute right-0 top-12 flex flex-col space-y-3 p-5 dark:bg-secondary bg-white drop-shadow-lg rounded animate-scale"
       onAnimationEnd={handleAnimationEnd}
     >
-      {options.map(({ title, onclick }) => {
-        return <Option onClick={onclick}>{title}</Option>;
+      {options.map(({ title, onClick }) => {
+        return <Option onClick={onClick}>{title}</Option>;
       })}
     </div>
   );

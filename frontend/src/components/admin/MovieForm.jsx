@@ -87,9 +87,9 @@ const defaultMovieInfo = {
 
 export default function MovieForm() {
   const [movieInfo, setMovieInfo] = useState({ ...defaultMovieInfo });
-  const [showWritersModal, setshowWritersModal] = useState(false);
-  const [showCastModal, setshowCastModal] = useState(false);
-  const [showGenresModal, setshowGenresModal] = useState(false);
+  const [showWritersModal, setShowWritersModal] = useState(false);
+  const [showCastModal, setShowCastModal] = useState(false);
+  const [showGenresModal, setShowGenresModal] = useState(false);
   const [selectedPosterForUI, setSelectedPosterForUI] = useState("");
 
   const { updateNotification } = useNotification();
@@ -137,7 +137,7 @@ export default function MovieForm() {
       if (writer.id === profile.id) {
         return updateNotification(
           "warning",
-          "This profile is already selected"
+          "This profile is already selected!"
         );
       }
     }
@@ -146,27 +146,27 @@ export default function MovieForm() {
   };
 
   const hideWritersModal = () => {
-    setshowWritersModal(false);
+    setShowWritersModal(false);
   };
 
   const displayWritersModal = () => {
-    setshowWritersModal(true);
+    setShowWritersModal(true);
   };
 
   const hideCastModal = () => {
-    setshowCastModal(false);
+    setShowCastModal(false);
   };
 
   const displayCastModal = () => {
-    setshowCastModal(true);
+    setShowCastModal(true);
   };
 
   const hideGenresModal = () => {
-    setshowGenresModal(false);
+    setShowGenresModal(false);
   };
 
   const displayGenresModal = () => {
-    setshowGenresModal(true);
+    setShowGenresModal(true);
   };
 
   const handleWriterRemove = (profileId) => {
@@ -183,10 +183,22 @@ export default function MovieForm() {
     setMovieInfo({ ...movieInfo, cast: [...newCast] });
   };
 
-  const { title, storyLine, director, writers, cast, tags, genres, type, language, status } = movieInfo;
+  const {
+    title,
+    storyLine,
+    director,
+    writers,
+    cast,
+    tags,
+    genres,
+    type,
+    language,
+    status,
+    releaseDate,
+  } = movieInfo;
   return (
     <>
-      <div className="flex space-x-3">
+      <di onSubmit={handleSubmit} className="flex space-x-3">
         <div className="w-[70%] space-y-5">
           <div>
             <Label htmlFor="title">Title</Label>
@@ -197,7 +209,7 @@ export default function MovieForm() {
               name="title"
               type="text"
               className={
-                commonInputClass + " border-b-2 font-semibold text-xl "
+                commonInputClass + " border-b-2 font-semibold text-xl"
               }
               placeholder="Titanic"
             />
@@ -210,13 +222,13 @@ export default function MovieForm() {
               onChange={handleChange}
               name="storyLine"
               id="storyLine"
-              className={commonInputClass + " border-b-2 resize-none h-24 "}
-              placeholder="Movie story line..."
+              className={commonInputClass + " border-b-2 resize-none h-24"}
+              placeholder="Movie storyline..."
             ></textarea>
           </div>
 
           <div>
-            <Label htmlFor="Tags">Tags</Label>
+            <Label htmlFor="rags">Tags</Label>
             <TagsInput value={tags} name="tags" onChange={updateTags}>
               {" "}
             </TagsInput>
@@ -273,6 +285,7 @@ export default function MovieForm() {
             className={commonInputClass + " border-2 rounded p-1 w-auto"}
             onChange={handleChange}
             name="releaseDate"
+            value={releaseDate}
           />
 
           <Submit value="Upload" onClick={handleSubmit} type="button" />
@@ -312,7 +325,7 @@ export default function MovieForm() {
             label="Status"
           />
         </div>
-      </div>
+      </di>
 
       <WritersModal
         onClose={hideWritersModal}
