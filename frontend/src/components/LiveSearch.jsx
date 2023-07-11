@@ -12,6 +12,7 @@ export default function LiveSearch({
   renderItem = null,
   onChange = null,
   onSelect = null,
+  visible,
 }) {
   const [displaySearch, setDisplaySearch] = useState(false);
   const [focusedIndex, setFocusedIndex] = useState(-1); // when move the scroll bar array we do not want focus on any index
@@ -67,14 +68,20 @@ export default function LiveSearch({
       : commonInputClass + " rounded border-2 p-1 text-lg";
   };
 
+
   const handleChange = (e) => {
     setDefaultValue(e.target.value);
     onChange && onChange(e);
   };
 
   useEffect(() => {
-    if (value) setDefaultValue(value);
+    setDefaultValue(value);
   }, [value]);
+
+  useEffect(()=> {
+    if(visible) return setDisplaySearch(visible)
+    setDisplaySearch(false);
+  },[visible])
 
   return (
     <div className="relative">

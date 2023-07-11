@@ -3,7 +3,7 @@ import TagsInput from "../TagsInput";
 import { commonInputClass } from "../../utils/theme";
 import LiveSearch from "../LiveSearch";
 import Submit from "../form/Submit";
-import { useNotification } from "../../hooks";
+import { useNotification, useSearch } from "../../hooks";
 import ModalContainer from "../modals/ModalContainer";
 import WritersModal from "../modals/WritersModal";
 import CastForm from "../form/CastForm";
@@ -17,6 +17,7 @@ import {
   statusOptions,
   typeOptions,
 } from "../../utils/options";
+import { searchActor } from "../../api/actor";
 
 export const results = [
   {
@@ -91,8 +92,12 @@ export default function MovieForm() {
   const [showCastModal, setShowCastModal] = useState(false);
   const [showGenresModal, setShowGenresModal] = useState(false);
   const [selectedPosterForUI, setSelectedPosterForUI] = useState("");
+  const [writerName, setWriterName] = useState("");
+  const [writersProfile, setWritersProfile] = useState([]);
+  const [directorsProfile, setDirectorsProfile] = useState([]);
 
   const { updateNotification } = useNotification();
+  const { handleSearch, searching, results, resetSearch } = useSearch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -111,6 +116,7 @@ export default function MovieForm() {
       updatePosterForUI(poster);
       return setMovieInfo({ ...movieInfo, poster });
     }
+
     setMovieInfo({ ...movieInfo, [name]: value });
   };
 
@@ -120,6 +126,7 @@ export default function MovieForm() {
 
   const updateDirector = (profile) => {
     setMovieInfo({ ...movieInfo, director: profile });
+    resetSearch();
   };
 
   const updateCast = (castInfo) => {
@@ -143,6 +150,7 @@ export default function MovieForm() {
     }
 
     setMovieInfo({ ...movieInfo, writers: [...writers, profile] });
+    setWriterName('');
   };
 
   const hideWritersModal = () => {
@@ -183,6 +191,18 @@ export default function MovieForm() {
     setMovieInfo({ ...movieInfo, cast: [...newCast] });
   };
 
+  const handleProfileChange = ({ target }) => {
+    const { name, value } = target;
+    if (name === "director") {
+      setMovieInfo({ ...movieInfo, director: { name: value } });
+      handleSearch(searchActor, value, setDirectorsProfile);
+    }
+    if (name === "writers") {
+      setWriterName(value);
+      handleSearch(searchActor, value, setWritersProfile);
+    }
+  };
+
   const {
     title,
     storyLine,
@@ -198,7 +218,7 @@ export default function MovieForm() {
   } = movieInfo;
   return (
     <>
-      <di onSubmit={handleSubmit} className="flex space-x-3">
+      <div onSubmit={handleSubmit} className="flex space-x-3">
         <div className="w-[70%] space-y-5">
           <div>
             <Label htmlFor="title">Title</Label>
@@ -208,9 +228,7 @@ export default function MovieForm() {
               onChange={handleChange}
               name="title"
               type="text"
-              className={
-                commonInputClass + " border-b-2 font-semibold text-xl"
-              }
+              className={commonInputClass + " border-b-2 font-semibold text-xl"}
               placeholder="Titanic"
             />
           </div>
@@ -240,9 +258,11 @@ export default function MovieForm() {
               name="director"
               value={director.name}
               placeholder="Search Profile"
-              results={results}
+              results={directorsProfile}
               renderItem={renderItem}
               onSelect={updateDirector}
+              onChange={handleProfileChange}
+              visible={directorsProfile.length}
             ></LiveSearch>
           </div>
 
@@ -262,9 +282,12 @@ export default function MovieForm() {
             <LiveSearch
               name="writers"
               placeholder="Search Profile"
-              results={results}
+              results={writersProfile}
               renderItem={renderItem}
               onSelect={updateWriters}
+              onChange={handleProfileChange}
+              value={writerName}
+              visible={writersProfile.length}
             ></LiveSearch>
           </div>
 
@@ -297,7 +320,7 @@ export default function MovieForm() {
             onChange={handleChange}
             selectedPoster={selectedPosterForUI}
             accept="image/jpg, image/jpeg, image/png"
-            label = 'Select poster'
+            label="Select poster"
           />
           <GenresSelector
             badge={genres.length}
@@ -326,7 +349,7 @@ export default function MovieForm() {
             label="Status"
           />
         </div>
-      </di>
+      </div>
 
       <WritersModal
         onClose={hideWritersModal}

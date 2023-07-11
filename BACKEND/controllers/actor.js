@@ -25,7 +25,7 @@ exports.createActor = async (req, res) => {
     newActor.avatar = { url, public_id };
   }
   await newActor.save();
-  res.status(201).json({actor: formatActor(newActor)});
+  res.status(201).json({ actor: formatActor(newActor) });
 };
 
 // update
@@ -92,7 +92,7 @@ exports.searchActor = async (req, res) => {
   const result = await Actor.find({ $text: { $search: `"${query.name}"` } });
 
   const actors = result.map((actor) => formatActor(actor));
-  res.json(actors);
+  res.json({ results: actors });
 };
 
 exports.getLatestActor = async (req, res) => {

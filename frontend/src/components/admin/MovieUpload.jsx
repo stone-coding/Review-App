@@ -43,11 +43,11 @@ export default function MovieUpload({visible, onClose}) {
     if (!videoUploaded && uploadProgress >= 100) {
       return "Processing";
     }
-    return `Upload progress ${uploadProgress}`;
+    return `Upload progress ${uploadProgress}%`;
   };
 
   return (
-    <ModalContainer visible={visible} onClose={onClose}>
+    <ModalContainer visible={visible}>
       {/* <UploadProgress</div>
           visible={!videoUploaded && videoSelected}
           message={getUploadProgressValue()}
