@@ -28,7 +28,7 @@ export default function MovieUpload({visible, onClose}) {
     setvideoInfo({ url, public_id });
   };
 
-  console.log(videoInfo);
+//   console.log(videoInfo);
 
   const handleChange = (file) => {
     const formData = new FormData();

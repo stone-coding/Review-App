@@ -11,7 +11,7 @@ import MovieUpload from "../admin/MovieUpload";
 export default function AdminNavigator() {
   const [showMovieUploadModal, setShowMovieUploadModal] = useState(false)
 
-  const displatMovieUploadModal = () =>{
+  const displayMovieUploadModal = () =>{
     setShowMovieUploadModal(true)
   }
 
@@ -25,7 +25,7 @@ export default function AdminNavigator() {
      <div className="flex dark:bg-primary bg-white">
       <Narbar />
       <div className="flex-1 p-2 max-w-screen-xl">
-        <Header onAddMovieClick={displatMovieUploadModal} />
+        <Header onAddMovieClick={displayMovieUploadModal} />
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/movies" element={<Movies />} />

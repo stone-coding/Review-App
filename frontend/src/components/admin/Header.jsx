@@ -3,7 +3,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { BsFillSunFill } from "react-icons/bs";
 import { useTheme } from "../../hooks";
 
-export default function Header({onAddMovieClick, onAddActorClick}) {
+export default function Header({ onAddMovieClick, onAddActorClick }) {
   const [showOptions, setShowOptions] = useState(false);
   const { toggleTheme } = useTheme();
   const options = [
@@ -23,7 +23,7 @@ export default function Header({onAddMovieClick, onAddActorClick}) {
       <div className="flex items-center space-x-3">
         <button
           onClick={toggleTheme}
-          className=" dark:text-white text-light-subtle"
+          className="dark:text-white text-light-subtle"
         >
           <BsFillSunFill size={24} />
         </button>
@@ -32,9 +32,7 @@ export default function Header({onAddMovieClick, onAddActorClick}) {
         <button
           onClick={() => setShowOptions(true)}
           className="flex items-center space-x-2 dark:border-dark-subtle border-light-subtle
-          dark:text-dark-subtle text-light-subtle
-           
-        hover:opacity-80 transition font-semibold border-2 rounded text-lg px-3 py-1"
+          dark:text-dark-subtle text-light-subtle hover:opacity-80 transition font-semibold border-2 rounded text-lg px-3 py-1"
         >
           <span>Create</span>
           <AiOutlinePlus />
@@ -58,9 +56,9 @@ const CreateOptions = ({ options, visible, onClose }) => {
     const handleClose = (e) => {
       // component is not rendered
       if (!visible) return;
-      
+
       const { parentElement, id } = e.target;
-  
+
       if (parentElement.id === containerID || id === containerID) return;
 
       if (container.current) {
