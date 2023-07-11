@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import TagsInput from "../TagsInput";
 import { commonInputClass } from "../../utils/theme";
-import LiveSearch from "../LiveSearch";
 import Submit from "../form/Submit";
-import { useNotification, useSearch } from "../../hooks";
-import ModalContainer from "../modals/ModalContainer";
+import { useNotification } from "../../hooks";
 import WritersModal from "../modals/WritersModal";
 import CastForm from "../form/CastForm";
 import CastModal from "../modals/CastModal";
@@ -17,59 +15,14 @@ import {
   statusOptions,
   typeOptions,
 } from "../../utils/options";
-import { searchActor } from "../../api/actor";
 
-export const results = [
-  {
-    id: "1",
-    avatar:
-      "https://images.unsplash.com/photo-1643713303351-01f540054fd7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80",
-    name: "John Doe",
-  },
-  {
-    id: "2",
-    avatar:
-      "https://images.unsplash.com/photo-1643883135036-98ec2d9e50a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80",
-    name: "Chandri Anggara",
-  },
-  {
-    id: "3",
-    avatar:
-      "https://images.unsplash.com/photo-1578342976795-062a1b744f37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80",
-    name: "Amin RK",
-  },
-  {
-    id: "4",
-    avatar:
-      "https://images.unsplash.com/photo-1564227901-6b1d20bebe9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80",
-    name: "Edward Howell",
-  },
-  {
-    id: "5",
-    avatar:
-      "https://images.unsplash.com/photo-1578342976795-062a1b744f37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80",
-    name: "Amin RK",
-  },
-  {
-    id: "6",
-    avatar:
-      "https://images.unsplash.com/photo-1564227901-6b1d20bebe9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80",
-    name: "Edward Howell",
-  },
-];
+import Label from "../Label";
+import DirectorSelector from "../DirectorSelector";
+import WriterSelector from "../WriterSelector";
+import ViewAllBtn from "../ViewAllButton";
+import LabelWithBadge from "../LabelWithBadge";
 
-export const renderItem = (result) => {
-  return (
-    <div key={result.id} className="flex space-x-2 rounded overflow-hidden">
-      <img
-        src={result.avatar}
-        alt={result.name}
-        className="w-16 h-16 object-cover"
-      />
-      <p className="dark:text-white font-semibold">{result.name}</p>
-    </div>
-  );
-};
+
 
 const defaultMovieInfo = {
   title: "",
@@ -92,12 +45,8 @@ export default function MovieForm() {
   const [showCastModal, setShowCastModal] = useState(false);
   const [showGenresModal, setShowGenresModal] = useState(false);
   const [selectedPosterForUI, setSelectedPosterForUI] = useState("");
-  const [writerName, setWriterName] = useState("");
-  const [writersProfile, setWritersProfile] = useState([]);
-  const [directorsProfile, setDirectorsProfile] = useState([]);
 
   const { updateNotification } = useNotification();
-  const { handleSearch, searching, results, resetSearch } = useSearch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -126,7 +75,6 @@ export default function MovieForm() {
 
   const updateDirector = (profile) => {
     setMovieInfo({ ...movieInfo, director: profile });
-    resetSearch();
   };
 
   const updateCast = (castInfo) => {
@@ -150,7 +98,6 @@ export default function MovieForm() {
     }
 
     setMovieInfo({ ...movieInfo, writers: [...writers, profile] });
-    setWriterName('');
   };
 
   const hideWritersModal = () => {
@@ -191,22 +138,9 @@ export default function MovieForm() {
     setMovieInfo({ ...movieInfo, cast: [...newCast] });
   };
 
-  const handleProfileChange = ({ target }) => {
-    const { name, value } = target;
-    if (name === "director") {
-      setMovieInfo({ ...movieInfo, director: { name: value } });
-      handleSearch(searchActor, value, setDirectorsProfile);
-    }
-    if (name === "writers") {
-      setWriterName(value);
-      handleSearch(searchActor, value, setWritersProfile);
-    }
-  };
-
   const {
     title,
     storyLine,
-    director,
     writers,
     cast,
     tags,
@@ -252,19 +186,7 @@ export default function MovieForm() {
             </TagsInput>
           </div>
 
-          <div>
-            <Label htmlFor="director">Director</Label>
-            <LiveSearch
-              name="director"
-              value={director.name}
-              placeholder="Search Profile"
-              results={directorsProfile}
-              renderItem={renderItem}
-              onSelect={updateDirector}
-              onChange={handleProfileChange}
-              visible={directorsProfile.length}
-            ></LiveSearch>
-          </div>
+          <DirectorSelector onSelect={updateDirector} />
 
           <div>
             <div className="flex justify-between">
@@ -278,17 +200,7 @@ export default function MovieForm() {
                 View All
               </ViewAllBtn>
             </div>
-
-            <LiveSearch
-              name="writers"
-              placeholder="Search Profile"
-              results={writersProfile}
-              renderItem={renderItem}
-              onSelect={updateWriters}
-              onChange={handleProfileChange}
-              value={writerName}
-              visible={writersProfile.length}
-            ></LiveSearch>
+            <WriterSelector onSelect={updateWriters} />
           </div>
 
           <div>
@@ -375,46 +287,6 @@ export default function MovieForm() {
   );
 }
 
-const Label = ({ children, htmlFor }) => {
-  return (
-    <label
-      htmlFor={htmlFor}
-      className="dark:text-dark-subtle text-light-subtle font-semibold"
-    >
-      {children}
-    </label>
-  );
-};
 
-const LabelWithBadge = ({ children, htmlFor, badge = 0 }) => {
-  const renderBadge = () => {
-    if (!badge) return null;
-    return (
-      <span
-        className="dark:bg-dark-subtle bg-light-subtle text-white 
-      absolute top-0 right-0 translate-x-2 -translate-y-1 text-xs w-5 h-5 rounded-full flex justify-center items-center"
-      >
-        {badge <= 9 ? badge : "9+"}
-      </span>
-    );
-  };
-  return (
-    <div className="relative">
-      <Label htmlFor={htmlFor}>{children}</Label>
-      {renderBadge()}
-    </div>
-  );
-};
 
-const ViewAllBtn = ({ visible, children, onClick }) => {
-  if (!visible) return null;
-  return (
-    <button
-      onClick={onClick}
-      type="button"
-      className="dark:text-white text-primary hover:underline transition"
-    >
-      {children}
-    </button>
-  );
-};
+

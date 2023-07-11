@@ -1,11 +1,10 @@
 import React, { useState } from "react";
+import LiveSearch from "./LiveSearch";
 import { renderItem } from "../utils/helper";
 import { useSearch } from "../hooks";
 import { searchActor } from "../api/actor";
-import Label from "./Label";
-import LiveSearch from "./LiveSearch";
 
-export default function DirectorSelector({ onSelect }) {
+export default function WriterSelector({onSelect}) {
   const [value, setValue] = useState("");
   const [profiles, setProfiles] = useState([]);
 
@@ -18,24 +17,21 @@ export default function DirectorSelector({ onSelect }) {
   };
 
   const handleOnSelect = (profile) => {
-    setValue(profile.name);
+    setValue('');
     onSelect(profile);
     setProfiles([]);
     resetSearch();
   };
 
   return (
-    <div>
-      <Label htmlFor="director">Director</Label>
-      <LiveSearch
-        name="director"
-        value={value}
-        placeholder="Search Profile"
-        results={profiles}
-        renderItem={renderItem}
-        onSelect={handleOnSelect}
-        onChange={handleOnChange}
-      ></LiveSearch>
-    </div>
+    <LiveSearch
+      name="writers"
+      placeholder="Search Profile"
+      results={profiles}
+      renderItem={renderItem}
+      onSelect={handleOnSelect}
+      onChange={handleOnChange}
+      value={value}
+    ></LiveSearch>
   );
 }

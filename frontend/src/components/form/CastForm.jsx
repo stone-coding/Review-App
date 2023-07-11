@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { commonInputClass } from "../../utils/theme";
 import LiveSearch from "../LiveSearch";
-import { renderItem, results } from "../admin/MovieForm";
-import { useNotification } from "../../hooks";
+import { useNotification, useSearch } from "../../hooks";
+import { renderItem } from "../../utils/helper";
+import { searchActor } from "../../api/actor";
 
 // const cast = [{ actor: id, roleAs: "", leadActor: true }];
 const defaultCastInfo = {
@@ -10,9 +11,12 @@ const defaultCastInfo = {
   roleAs: "",
   leadActor: false,
 };
-export default function CastForm({onSubmit}) {
+export default function CastForm({ onSubmit }) {
   const [castInfo, setCastInfo] = useState({ ...defaultCastInfo });
+  const [profiles, setProfiles] = useState([]);
+
   const { updateNotification } = useNotification();
+  const { handleSearch, resetSearch } = useSearch();
 
   const handleOnChange = ({ target }) => {
     const { checked, name, value } = target;
@@ -28,11 +32,23 @@ export default function CastForm({onSubmit}) {
 
   const handleSubmit = () => {
     const { profile, roleAs } = castInfo;
-    if (!profile.name) return updateNotification("error", "Cast profile is missing!");
-    if (!roleAs.trim()) return updateNotification("error", "Cast role is missing!");
+    if (!profile.name)
+      return updateNotification("error", "Cast profile is missing!");
+    if (!roleAs.trim())
+      return updateNotification("error", "Cast role is missing!");
 
-      onSubmit(castInfo)
-      setCastInfo({...defaultCastInfo})
+    onSubmit(castInfo);
+    setCastInfo({ ...defaultCastInfo, profile: { name: "" } });
+    resetSearch();
+    setProfiles([]);
+  };
+
+  const handleProfileChange = ({ target }) => {
+    const { value } = target;
+    const { profile } = castInfo;
+    profile.name = value;
+    setCastInfo({ ...castInfo, ...profile });
+    handleSearch(searchActor, value, setProfiles);
   };
 
   const { leadActor, profile, roleAs } = castInfo;
@@ -49,9 +65,10 @@ export default function CastForm({onSubmit}) {
       <LiveSearch
         placeholder="Search profile"
         value={profile.name}
-        results={results}
+        results={profiles}
         onSelect={handleProfileSelect}
         renderItem={renderItem}
+        onChange={handleProfileChange}
       />
       <span className="dark:text-dark-subtle text-light-subtle font-semibold">
         as
