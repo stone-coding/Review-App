@@ -47,6 +47,12 @@ const movieSchema = mongoose.Schema(
         leadActor: Boolean,
       },
     ],
+    writers: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Actor",
+      },
+    ],
     poster: {
       type: Object,
       url: { type: String, required: true },

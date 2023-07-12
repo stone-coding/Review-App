@@ -61,8 +61,9 @@ exports.createMovie = async (req, res) => {
     newMovie.writers = writers;
   }
 
+  // if file make poster an optional field
   if (file) {
-    //uploadinh poster
+    //uploading poster
     const {
       secure_url: url,
       public_id,
@@ -92,14 +93,13 @@ exports.createMovie = async (req, res) => {
 
     //   console.log(cloudRes);
     //   console.log(cloudRes.responsive_breakpoints[0].breakpoints);
-
-    await newMovie.save();
-
-    res.status(201).json({
-      id: newMovie._id,
-      title,
-    });
   }
+  await newMovie.save();
+
+  res.status(201).json({
+    id: newMovie._id,
+    title,
+  });
 };
 
 exports.updateMovieWithoutPoster = async (req, res) => {
@@ -249,7 +249,6 @@ exports.updateMovieWithPoster = async (req, res) => {
   res.json({ message: "Movie is updated", movie });
 };
 
-
 exports.removeMovie = async (req, res) => {
   const { movieId } = req.params;
 
@@ -275,7 +274,7 @@ exports.removeMovie = async (req, res) => {
   if (result !== "ok")
     return sendError(res, "Could not remove trailer from cloud!");
 
-    await Movie.findByIdAndDelete(movieId)
+  await Movie.findByIdAndDelete(movieId);
 
-    res.json({message:'Movie removed successfully!'})
+  res.json({ message: "Movie removed successfully!" });
 };
