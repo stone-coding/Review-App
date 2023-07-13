@@ -33,7 +33,7 @@ export default function AdminNavigator() {
     <>
       <div className="flex dark:bg-primary bg-white">
         <Narbar />
-        <div className="flex-1 p-2 max-w-screen-xl">
+        <div className="flex-1 max-w-screen-xl">
           <Header onAddMovieClick={displayMovieUploadModal} 
           onAddActorClick={displayActorUploadModal}/>
           <Routes>

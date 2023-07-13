@@ -62,7 +62,7 @@ exports.updateActor = async (req, res) => {
   actor.gender = gender;
 
   await actor.save();
-  res.status(201).json(formatActor(actor));
+  res.status(201).json({ actor: formatActor(actor) });
 };
 
 exports.removeActor = async (req, res) => {
@@ -88,8 +88,14 @@ exports.removeActor = async (req, res) => {
 };
 
 exports.searchActor = async (req, res) => {
-  const { query } = req;
-  const result = await Actor.find({ $text: { $search: `"${query.name}"` } });
+  const { name } = req.query;
+  // Full name search
+  // const result = await Actor.find({ $text: { $search: `"${query.name}"` } });
+  // Partial name search
+  if (!name.trim()) return sendError(res, "Invalid request!");
+  const result = await Actor.find({
+    name: { $regex: name, $options: "i" },
+  });
 
   const actors = result.map((actor) => formatActor(actor));
   res.json({ results: actors });
@@ -126,9 +132,9 @@ exports.getActors = async (req, res) => {
     .skip(parseInt(pageNo) * parseInt(limit))
     .limit(parseInt(limit));
 
-    const profiles = actors.map(actor => formatActor(actor))
+  const profiles = actors.map((actor) => formatActor(actor));
 
   res.json({
-    profiles:profiles,
+    profiles: profiles,
   });
 };
