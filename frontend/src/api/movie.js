@@ -21,16 +21,34 @@ export const uploadTrailer = async (formData, onUploadProgress) => {
 };
 
 export const uploadMovie = async (formData) => {
-    const token = getToken();
-    try {
-      const { data } = await client.post("/movie/create", formData, {
+  const token = getToken();
+  try {
+    const { data } = await client.post("/movie/create", formData, {
+      headers: {
+        authorization: "Bearer " + token,
+        "content-type": "multipart/form-data",
+      },
+    });
+    return data;
+  } catch (error) {
+    return catchError(error);
+  }
+};
+
+export const getMovies = async (pageNo, limit) => {
+  const token = getToken();
+  try {
+    const { data } = await client(
+      `/movie/movies?pageNo=${pageNo}&limit=${limit}`,
+      {
         headers: {
           authorization: "Bearer " + token,
           "content-type": "multipart/form-data",
         },
-      });
-      return data;
-    } catch (error) {
-      return catchError(error);
-    }
-  };
+      }
+    );
+    return data;
+  } catch (error) {
+    return catchError(error);
+  }
+};

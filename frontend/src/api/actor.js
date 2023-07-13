@@ -18,17 +18,36 @@ export const createActor = async (formData) => {
 };
 
 export const searchActor = async (query) => {
-    const token = getToken();
-  
-    try {
-      const { data } = await client(`/actor/search?name=${query}`, {
+  const token = getToken();
+
+  try {
+    const { data } = await client(`/actor/search?name=${query}`, {
+      headers: {
+        authorization: "Bearer " + token,
+        "content-type": "multipart/form-data",
+      },
+    });
+    return data;
+  } catch (error) {
+    return catchError(error);
+  }
+};
+
+export const getActors = async (pageNo, limit) => {
+  const token = getToken();
+
+  try {
+    const { data } = await client(
+      `/actor/actors?pageNo=${pageNo}&limit=${limit}`,
+      {
         headers: {
           authorization: "Bearer " + token,
           "content-type": "multipart/form-data",
         },
-      });
-      return data;
-    } catch (error) {
-      return catchError(error);
-    }
-  };
+      }
+    );
+    return data;
+  } catch (error) {
+    return catchError(error);
+  }
+};

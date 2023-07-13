@@ -7,6 +7,7 @@ const {
   updateMovieWithoutPoster,
   updateMovieWithPoster,
   removeMovie,
+  getMovies,
 } = require("../controllers/movie");
 const { parseData } = require("../utils/helper");
 const { validateMovie, validate } = require("../middlewares/validator");
@@ -55,5 +56,6 @@ router.patch(
   );
 
 router.delete('/:movieId', isAuth, isAdmin, removeMovie)
+router.get('/movies',isAuth, isAdmin, getMovies)
 
 module.exports = router;

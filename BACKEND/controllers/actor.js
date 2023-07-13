@@ -110,3 +110,25 @@ exports.getSingleActor = async (req, res) => {
   if (!actor) return sendError(res, "Invalid request, acto not found!", 404);
   res.json(formatActor(actor));
 };
+
+/**
+ * sort -1 find the latest selected actor on the above. and skip will get
+ * number of actors to be skipped(initial 0) each time
+ * and limit gets how many actors are selected each time
+ * @param {*} req
+ * @param {*} res
+ */
+exports.getActors = async (req, res) => {
+  const { pageNo, limit } = req.query;
+
+  const actors = await Actor.find({})
+    .sort({ createdAt: -1 })
+    .skip(parseInt(pageNo) * parseInt(limit))
+    .limit(parseInt(limit));
+
+    const profiles = actors.map(actor => formatActor(actor))
+
+  res.json({
+    profiles:profiles,
+  });
+};
