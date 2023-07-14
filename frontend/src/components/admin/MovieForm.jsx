@@ -38,7 +38,7 @@ const defaultMovieInfo = {
   status: "",
 };
 
-export default function MovieForm({ onSubmit, busy, initialState }) {
+export default function MovieForm({ onSubmit, btnTitle, busy, initialState }) {
   const [movieInfo, setMovieInfo] = useState({ ...defaultMovieInfo });
   const [showWritersModal, setShowWritersModal] = useState(false);
   const [showCastModal, setShowCastModal] = useState(false);
@@ -181,7 +181,11 @@ export default function MovieForm({ onSubmit, busy, initialState }) {
 
   useEffect(() => {
     if (initialState) {
-      setMovieInfo({ ...initialState, poster: null });
+      setMovieInfo({
+        ...initialState,
+        releaseDate: initialState.releaseDate.split("T")[0],
+        poster: null,
+      });
       setSelectedPosterForUI(initialState.poster);
     }
   }, [initialState]);
@@ -229,8 +233,11 @@ export default function MovieForm({ onSubmit, busy, initialState }) {
 
           <div>
             <Label htmlFor="tags">Tags</Label>
-            <TagsInput value={tags} name="tags" onChange={updateTags}>
-            </TagsInput>
+            <TagsInput
+              value={tags}
+              name="tags"
+              onChange={updateTags}
+            ></TagsInput>
           </div>
 
           <DirectorSelector onSelect={updateDirector} />
@@ -272,7 +279,7 @@ export default function MovieForm({ onSubmit, busy, initialState }) {
 
           <Submit
             busy={busy}
-            value="Upload"
+            value={btnTitle}
             onClick={handleSubmit}
             type="button"
           />

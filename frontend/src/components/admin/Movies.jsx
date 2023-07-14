@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import MovieListItem from "../MovieListItem";
-import { getMovieForUpdate, getMovies } from "../../api/movie";
+import { deleteMovie, getMovieForUpdate, getMovies } from "../../api/movie";
 import { useNotification } from "../../hooks";
 import NextAndPrevButton from "../NextAndPrevButton";
 import UpdateMovie from "../modals/UpdateMovie";
+import ConfirmModal from "../modals/ConfirmModal";
 
 const limit = 1;
 let currentPageNo = 0;
@@ -13,6 +14,8 @@ export default function Movies() {
   const [reachedToEnd, setReachedToEnd] = useState(false);
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const [busy, setBusy] = useState(false);
 
   const { updateNotification } = useNotification();
 
@@ -26,11 +29,6 @@ export default function Movies() {
     }
     setMovies([...movies]);
   };
-
-  // function render some movies first time
-  useEffect(() => {
-    fetchMovies();
-  }, []);
 
   const handleOnNextClick = () => {
     if (reachedToEnd) return;
@@ -47,11 +45,52 @@ export default function Movies() {
 
   const handleOnEditClick = async ({ id }) => {
     const { movie, error } = await getMovieForUpdate(id);
-    setShowUpdateModal(true);
     if (error) return updateNotification("error", error);
     setSelectedMovie(movie);
     setShowUpdateModal(true);
   };
+
+  const handleOnDeleteClick = (movie) => {
+    setSelectedMovie(movie);
+    setShowConfirmModal(true);
+  };
+
+  const handleOnDeleteConfirm = async () => {
+    setBusy(false);
+    const { error, message } = await deleteMovie(selectedMovie.id);
+    setBusy(true);
+
+    if (error) updateNotification("error", error);
+
+    updateNotification("success", message);
+    hideConfirmModal();
+    fetchMovies(currentPageNo);
+  };
+
+  const handleOnUpdate = (movie) => {
+    const updatedMovies = movies.map((m) => {
+      if (m.id === movie.id) {
+        return movie;
+      }
+      return m;
+    });
+    setMovies([...updatedMovies]);
+  };
+
+  const hideConfirmModal = () => {
+    setShowConfirmModal(false);
+  };
+
+  const hideUpdateForm = () => {
+    setShowUpdateModal(false);
+  };
+
+
+
+  // function render some movies first time
+  useEffect(() => {
+    fetchMovies(currentPageNo);
+  }, []);
 
   return (
     <>
@@ -62,6 +101,7 @@ export default function Movies() {
               key={movie.id}
               movie={movie}
               onEditClick={() => handleOnEditClick(movie)}
+              onDeleteClick={() => handleOnDeleteClick(movie)}
             />
           );
         })}
@@ -73,7 +113,21 @@ export default function Movies() {
         />
       </div>
 
-      <UpdateMovie visible={showUpdateModal} initialState = {selectedMovie} />
+      <UpdateMovie
+        visible={showUpdateModal}
+        initialState={selectedMovie}
+        onSuccess={handleOnUpdate}
+        onClose={hideUpdateForm}
+      />
+
+      <ConfirmModal
+        visible={showConfirmModal}
+        onConfirm={handleOnDeleteConfirm}
+        onCancel={hideConfirmModal}
+        title="Are you sure?"
+        subtitle="This action will remove this movie permanently!"
+        busy={busy}
+      />
     </>
   );
 }
