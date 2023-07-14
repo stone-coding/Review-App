@@ -1,7 +1,7 @@
 import React from "react";
 import { BsBoxArrowUpRight, BsPencilSquare, BsTrash } from "react-icons/bs";
 
-const MovieListItem = ({ movie, onDeleteClick, onAddClick, onOpenClick }) => {
+const MovieListItem = ({ movie, onDeleteClick, onEditClick, onOpenClick }) => {
   const { poster, title, genres = [], status } = movie;
   return (
     <table className="w-full border-b">
@@ -34,7 +34,7 @@ const MovieListItem = ({ movie, onDeleteClick, onAddClick, onOpenClick }) => {
           </td>
 
           <td className="px-5">
-            <p className="text-primary dark:text-white ">public</p>
+            <p className="text-primary dark:text-white ">{status}</p>
           </td>
 
           <td>
@@ -42,7 +42,7 @@ const MovieListItem = ({ movie, onDeleteClick, onAddClick, onOpenClick }) => {
               <button onClick={onDeleteClick} type="button">
                 <BsTrash />
               </button>
-              <button onClick={onAddClick} type="button">
+              <button onClick={onEditClick} type="button">
                 <BsPencilSquare />
               </button>
               <button onClick={onOpenClick} type="button">

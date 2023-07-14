@@ -3,6 +3,7 @@ import MovieListItem from "../MovieListItem";
 import { getMovies } from "../../api/movie";
 import { useNotification } from "../../hooks";
 import NextAndPrevButton from "../NextAndPrevButton";
+import UpdateMovie from "../modals/UpdateMovie";
 
 const limit = 1;
 let currentPageNo = 0;
@@ -10,6 +11,7 @@ let currentPageNo = 0;
 export default function Movies() {
   const [movies, setMovies] = useState([]);
   const [reachedToEnd, setReachedToEnd] = useState(false);
+  const [showUpdateModal, setShowUpdateModal] = useState(false);
 
   const { updateNotification } = useNotification();
 
@@ -42,10 +44,23 @@ export default function Movies() {
     fetchMovies(currentPageNo);
   };
 
+  const handleOnEditClick = (movie) => {
+    setShowUpdateModal(true)
+    console.log(movie);
+  };
+
   return (
+
+    <>
     <div className="space-y-3 p-5">
       {movies.map((movie) => {
-        return <MovieListItem key={movie.id} movie={movie} />;
+        return (
+          <MovieListItem
+            key={movie.id}
+            movie={movie}
+            onEditClick={() => handleOnEditClick(movie)}
+          />
+        );
       })}
 
       <NextAndPrevButton
@@ -54,5 +69,9 @@ export default function Movies() {
         onPrevClick={handleOnPrevClick}
       />
     </div>
+    
+    <UpdateMovie visible={showUpdateModal}/>
+    </>
+    
   );
 }

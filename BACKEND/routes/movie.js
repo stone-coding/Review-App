@@ -8,10 +8,10 @@ const {
   updateMovieWithPoster,
   removeMovie,
   getMovies,
+  getMovieForUpdate,
 } = require("../controllers/movie");
 const { parseData } = require("../utils/helper");
 const { validateMovie, validate } = require("../middlewares/validator");
-
 
 const router = express.Router();
 
@@ -45,17 +45,18 @@ router.patch(
 );
 
 router.patch(
-    "/update-movie-with-poster/:movieId",
-    isAuth,
-    isAdmin,
-    uploadImage.single("poster"),
-    parseData,
-    validateMovie,
-    validate,
-    updateMovieWithPoster
-  );
+  "/update-movie-with-poster/:movieId",
+  isAuth,
+  isAdmin,
+  uploadImage.single("poster"),
+  parseData,
+  validateMovie,
+  validate,
+  updateMovieWithPoster
+);
 
-router.delete('/:movieId', isAuth, isAdmin, removeMovie)
-router.get('/movies',isAuth, isAdmin, getMovies)
+router.delete("/:movieId", isAuth, isAdmin, removeMovie);
+router.get("/movies", isAuth, isAdmin, getMovies);
+router.get("/for-update/:movieId", isAuth, isAdmin, getMovieForUpdate);
 
 module.exports = router;

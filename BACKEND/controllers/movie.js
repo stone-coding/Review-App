@@ -296,3 +296,13 @@ exports.getMovies = async (req, res) => {
 
   res.json({ movies: results });
 };
+
+exports.getMovieForUpdate = async (req, res) => {
+  const { movieId } = req.params;
+
+  if (!isValidObjectId(movieId)) return sendError(res, "Id is invalid!");
+
+  const movie = await Movie.findById(movieId);
+
+  res.json({ movie });
+};
