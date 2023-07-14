@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TagsInput from "../TagsInput";
 import { commonInputClass } from "../../utils/theme";
 import Submit from "../form/Submit";
@@ -38,7 +38,7 @@ const defaultMovieInfo = {
   status: "",
 };
 
-export default function MovieForm({ onSubmit, busy }) {
+export default function MovieForm({ onSubmit, busy, initialState }) {
   const [movieInfo, setMovieInfo] = useState({ ...defaultMovieInfo });
   const [showWritersModal, setShowWritersModal] = useState(false);
   const [showCastModal, setShowCastModal] = useState(false);
@@ -50,7 +50,7 @@ export default function MovieForm({ onSubmit, busy }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { error } = validateMovie(movieInfo);
-    if (error) updateNotification("error", error);
+    if (error) return updateNotification("error", error);
 
     // cast, tags, genres, writers,
     const { tags, genres, cast, writers, director, poster } = movieInfo;
@@ -179,6 +179,13 @@ export default function MovieForm({ onSubmit, busy }) {
     setMovieInfo({ ...movieInfo, cast: [...newCast] });
   };
 
+  useEffect(() => {
+    if (initialState) {
+      setMovieInfo({ ...initialState, poster: null });
+      setSelectedPosterForUI(initialState.poster);
+    }
+  }, [initialState]);
+
   const {
     title,
     storyLine,
@@ -221,9 +228,8 @@ export default function MovieForm({ onSubmit, busy }) {
           </div>
 
           <div>
-            <Label htmlFor="rags">Tags</Label>
+            <Label htmlFor="tags">Tags</Label>
             <TagsInput value={tags} name="tags" onChange={updateTags}>
-              {" "}
             </TagsInput>
           </div>
 

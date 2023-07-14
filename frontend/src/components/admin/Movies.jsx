@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MovieListItem from "../MovieListItem";
-import { getMovies } from "../../api/movie";
+import { getMovieForUpdate, getMovies } from "../../api/movie";
 import { useNotification } from "../../hooks";
 import NextAndPrevButton from "../NextAndPrevButton";
 import UpdateMovie from "../modals/UpdateMovie";
@@ -12,6 +12,7 @@ export default function Movies() {
   const [movies, setMovies] = useState([]);
   const [reachedToEnd, setReachedToEnd] = useState(false);
   const [showUpdateModal, setShowUpdateModal] = useState(false);
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
   const { updateNotification } = useNotification();
 
@@ -44,34 +45,35 @@ export default function Movies() {
     fetchMovies(currentPageNo);
   };
 
-  const handleOnEditClick = (movie) => {
-    setShowUpdateModal(true)
-    console.log(movie);
+  const handleOnEditClick = async ({ id }) => {
+    const { movie, error } = await getMovieForUpdate(id);
+    setShowUpdateModal(true);
+    if (error) return updateNotification("error", error);
+    setSelectedMovie(movie);
+    setShowUpdateModal(true);
   };
 
   return (
-
     <>
-    <div className="space-y-3 p-5">
-      {movies.map((movie) => {
-        return (
-          <MovieListItem
-            key={movie.id}
-            movie={movie}
-            onEditClick={() => handleOnEditClick(movie)}
-          />
-        );
-      })}
+      <div className="space-y-3 p-5">
+        {movies.map((movie) => {
+          return (
+            <MovieListItem
+              key={movie.id}
+              movie={movie}
+              onEditClick={() => handleOnEditClick(movie)}
+            />
+          );
+        })}
 
-      <NextAndPrevButton
-        className="mt-5"
-        onNextClick={handleOnNextClick}
-        onPrevClick={handleOnPrevClick}
-      />
-    </div>
-    
-    <UpdateMovie visible={showUpdateModal}/>
+        <NextAndPrevButton
+          className="mt-5"
+          onNextClick={handleOnNextClick}
+          onPrevClick={handleOnPrevClick}
+        />
+      </div>
+
+      <UpdateMovie visible={showUpdateModal} initialState = {selectedMovie} />
     </>
-    
   );
 }

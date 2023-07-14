@@ -1,4 +1,4 @@
-const { sendError } = require("../utils/helper");
+const { sendError, formatActor } = require("../utils/helper");
 const cloudinary = require("../cloud/index");
 const Movie = require("../models/movie");
 const { isValidObjectId } = require("mongoose");
@@ -97,8 +97,10 @@ exports.createMovie = async (req, res) => {
   await newMovie.save();
 
   res.status(201).json({
-    id: newMovie._id,
-    title,
+    movie: {	
+      id: newMovie._id,	
+      title,	
+    },
   });
 };
 
@@ -216,7 +218,7 @@ exports.updateMovieWithPoster = async (req, res) => {
     }
   }
 
-  //uploadinh poster
+  //uploading poster
   const {
     secure_url: url,
     public_id,
@@ -302,7 +304,32 @@ exports.getMovieForUpdate = async (req, res) => {
 
   if (!isValidObjectId(movieId)) return sendError(res, "Id is invalid!");
 
-  const movie = await Movie.findById(movieId);
+  const movie = await Movie.findById(movieId).populate(
+    "director writers cast.actor"
+  );
 
-  res.json({ movie });
+  res.json({
+    movie: {
+      id: movie._id,
+      title: movie.title,
+      storyLine: movie.storyLine,
+      poster: movie.poster?.url,
+      releaseDate: movie.releaseDate,
+      status: movie.status,
+      type: movie.type,
+      language: movie.language,
+      genres: movie.genres,
+      tags: movie.tags,
+      director: formatActor(movie.director),
+      writers: movie.writers.map((w) => formatActor(w)),
+      cast: movie.cast.map((c) => {
+        return {
+          id: c.id,
+          profile: formatActor(c.actor),
+          roleAs: c.roleAs,
+          leadActor: c.leadActor,
+        };
+      }),
+    },
+  });
 };
