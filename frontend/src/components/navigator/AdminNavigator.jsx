@@ -8,6 +8,7 @@ import Narbar from "../admin/Narbar";
 import Header from "../admin/Header";
 import MovieUpload from "../admin/MovieUpload";
 import ActorUpload from "../modals/ActorUpload";
+import SearchMovies from "../admin/SearchMovies";
 
 export default function AdminNavigator() {
   const [showMovieUploadModal, setShowMovieUploadModal] = useState(false);
@@ -40,6 +41,7 @@ export default function AdminNavigator() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/movies" element={<Movies />} />
             <Route path="/actors" element={<Actors />} />
+            <Route path="/search" element={<SearchMovies/>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

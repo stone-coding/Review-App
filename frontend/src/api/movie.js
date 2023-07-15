@@ -35,6 +35,20 @@ export const uploadMovie = async (formData) => {
   }
 };
 
+export const getMovieForUpdate = async (id) => {
+    const token = getToken();
+    try {
+      const { data } = await client("/movie/for-update/" + id, {
+        headers: {
+          authorization: "Bearer " + token,
+        },
+      });
+      return data;
+    } catch (error) {
+      return catchError(error);
+    }
+  };
+
 export const getMovies = async (pageNo, limit) => {
   const token = getToken();
   try {
@@ -53,10 +67,25 @@ export const getMovies = async (pageNo, limit) => {
   }
 };
 
-export const getMovieForUpdate = async (id) => {
+export const updateMovie = async (id, formData) => {
   const token = getToken();
   try {
-    const { data } = await client("/movie/for-update/" + id, {
+    const { data } = await client.patch("/movie/update/" + id, formData, {
+      headers: {
+        authorization: "Bearer " + token,
+        "content-type": "multipart/form-data",
+      },
+    });
+    return data;
+  } catch (error) {
+    return catchError(error);
+  }
+};
+
+export const deleteMovie = async (id) => {
+  const token = getToken();
+  try {
+    const { data } = await client.delete(`/movie/${id}`, {
       headers: {
         authorization: "Bearer " + token,
       },
@@ -67,25 +96,10 @@ export const getMovieForUpdate = async (id) => {
   }
 };
 
-export const updateMovie = async (id, formData) => {
+export const searchMovieForAdmin = async (title) => {
     const token = getToken();
     try {
-      const { data } = await client.delete("/movie/update/" + id,formData, {
-        headers: {
-          authorization: "Bearer " + token,
-          "content-type": "multipart/form-data",
-        },
-      });
-      return data;
-    } catch (error) {
-      return catchError(error);
-    }
-  };
-
-  export const deleteMovie = async (id) => {
-    const token = getToken();
-    try {
-      const { data } = await client.delete(`/movie/${id}`, {
+      const { data } = await client(`/movie/search?title=${title}`, {
         headers: {
           authorization: "Bearer " + token,
         },

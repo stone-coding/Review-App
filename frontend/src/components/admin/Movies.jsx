@@ -6,7 +6,7 @@ import NextAndPrevButton from "../NextAndPrevButton";
 import UpdateMovie from "../modals/UpdateMovie";
 import ConfirmModal from "../modals/ConfirmModal";
 
-const limit = 1;
+const limit = 10;
 let currentPageNo = 0;
 
 export default function Movies() {
@@ -84,8 +84,6 @@ export default function Movies() {
   const hideUpdateForm = () => {
     setShowUpdateModal(false);
   };
-
-
 
   // function render some movies first time
   useEffect(() => {
