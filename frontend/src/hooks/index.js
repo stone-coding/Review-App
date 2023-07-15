@@ -3,6 +3,7 @@ import { ThemeContext } from "../context/ThemeProvider"
 import { NotificationContext } from "../context/NotificationProvider"
 import { AuthContext } from "../context/AuthProvider"
 import { SearchContext } from "../context/SearchProvider"
+import { MovieContext } from "../context/MoviesProvider"
 
 export const useTheme = () => {
     return useContext(ThemeContext)
@@ -18,4 +19,8 @@ export const useAuth = () => {
 
 export const useSearch = () => {
     return useContext(SearchContext)
+}
+
+export const useMovies = () => {
+    return useContext(MovieContext)
 }
