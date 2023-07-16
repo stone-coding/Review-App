@@ -9,12 +9,12 @@ const pageNo = 0;
 const limit = 5;
 
 export default function LatestUploads() {
-  const [movies, setMovies] = useState([]);
-  const [busy, setBusy] = useState(false);
-  const [showConfirmModal, setShowConfirmModal] = useState(false);
-  const [showUpdateModal, setShowUpdateModal] = useState(false);
-  const [selectedMovie, setSelectedMovie] = useState(null);
-  const { updateNotification } = useNotification();
+//   const [movies, setMovies] = useState([]);
+//   const [busy, setBusy] = useState(false);
+//   const [showConfirmModal, setShowConfirmModal] = useState(false);
+//   const [showUpdateModal, setShowUpdateModal] = useState(false);
+//   const [selectedMovie, setSelectedMovie] = useState(null);
+//   const { updateNotification } = useNotification();
 
   const { fetchLatestUploads, latestUploads } = useMovies();
 
@@ -104,9 +104,9 @@ export default function LatestUploads() {
         onCancel={hideConfirmModal}
         onConfirm={handleOnDeleteConfirm}
         busy={busy}
-      /> */}
+      />
 
-      {/* <UpdateMovie
+      <UpdateMovie
         visible={showUpdateModal}
         onClose={hideUpdateModal}
         initialState={selectedMovie}

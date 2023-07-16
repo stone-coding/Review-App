@@ -17,12 +17,27 @@ export default function SearchMovies() {
     const { error, results } = await searchMovieForAdmin(val);
     if (error) return updateNotification("error", error);
 
-    if(!results.length) {
-        setResultNotFound(true);
-        return setMovies([])
+    if (!results.length) {
+      setResultNotFound(true);
+      return setMovies([]);
     }
     setResultNotFound(false);
     setMovies([...results]);
+  };
+
+  const handleAfterDelete = (movie) => {
+    const updatedMovies = movies.filter((m) => {
+      if (m.id !== movie.id) return m;
+    });
+    setMovies([...updatedMovies]);
+  };
+
+  const handleAfterUpdate = (movie) => {
+    const updatedMovies = movies.map((m) => {
+      if (m.id === movie.id) return movie;
+      else return m;
+    });
+    setMovies([...updatedMovies]);
   };
 
   useEffect(() => {
@@ -31,10 +46,19 @@ export default function SearchMovies() {
 
   return (
     <div className="p-5 space-y-3">
-        <NotFoundText text='Record not found!' visible={resultNotFound} />
-      {!resultNotFound? movies.map((movie) => {
-        return <MovieListItem movie={movie} key={movie.id} />;
-      }): null}
+      <NotFoundText text="Record not found!" visible={resultNotFound} />
+      {!resultNotFound
+        ? movies.map((movie) => {
+            return (
+              <MovieListItem
+                movie={movie}
+                key={movie.id}
+                afterDelete={handleAfterDelete}
+                afterUpdate={handleAfterUpdate}
+              />
+            );
+          })
+        : null}
     </div>
   );
 }
