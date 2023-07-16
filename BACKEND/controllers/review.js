@@ -109,5 +109,7 @@ exports.getReviewsByMovie = async (req, res) => {
     };
   });
 
-  res.json(reviews);
+  res.json({reviews});
 };
+
+
