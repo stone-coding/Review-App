@@ -14,7 +14,7 @@ const defaultActorInfo = {
 
 const genderOptions = [
   { title: "Male", value: "male" },
-  { title: "FeMale", value: "female" },
+  { title: "Female", value: "female" },
   { title: "Other", value: "other" },
 ];
 

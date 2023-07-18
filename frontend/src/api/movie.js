@@ -36,18 +36,18 @@ export const uploadMovie = async (formData) => {
 };
 
 export const getMovieForUpdate = async (id) => {
-    const token = getToken();
-    try {
-      const { data } = await client("/movie/for-update/" + id, {
-        headers: {
-          authorization: "Bearer " + token,
-        },
-      });
-      return data;
-    } catch (error) {
-      return catchError(error);
-    }
-  };
+  const token = getToken();
+  try {
+    const { data } = await client("/movie/for-update/" + id, {
+      headers: {
+        authorization: "Bearer " + token,
+      },
+    });
+    return data;
+  } catch (error) {
+    return catchError(error);
+  }
+};
 
 export const getMovies = async (pageNo, limit) => {
   const token = getToken();
@@ -97,16 +97,26 @@ export const deleteMovie = async (id) => {
 };
 
 export const searchMovieForAdmin = async (title) => {
-    const token = getToken();
-    try {
-      const { data } = await client(`/movie/search?title=${title}`, {
-        headers: {
-          authorization: "Bearer " + token,
-        },
-      });
-      return data;
-    } catch (error) {
-      return catchError(error);
-    }
-  };
-  
+  const token = getToken();
+  try {
+    const { data } = await client(`/movie/search?title=${title}`, {
+      headers: {
+        authorization: "Bearer " + token,
+      },
+    });
+    return data;
+  } catch (error) {
+    return catchError(error);
+  }
+};
+
+export const getTopRatedMovies = async (type) => {
+  try {
+    let endpoint = "/movie/top-rated";
+    if (type) endpoint = endpoint + "?type=" + type;
+    const { data } = await client(endpoint);
+    return data;
+  } catch (error) {
+    return catchError(error);
+  }
+};

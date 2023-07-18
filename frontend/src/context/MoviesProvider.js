@@ -4,7 +4,7 @@ import { getMovies } from "../api/movie";
 
 export const MovieContext = createContext();
 
-const limit = 1;
+const limit = 10;
 let currentPageNo = 0;
 
 const MoviesProvider = ({ children }) => {
