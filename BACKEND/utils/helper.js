@@ -99,11 +99,12 @@ exports.relatedMovieAggregation = (tags, movieId) => {
       $project: {
         title: 1,
         poster: "$poster.url",
+        responsivePosters: "$poster.responsive",
       },
     },
     { $limit: 5 },
-  ]
-}
+  ];
+};
 
 exports.getAverageRatings = async (movieId) => {
   const [aggregatedResponse] = await Review.aggregate(
@@ -117,8 +118,8 @@ exports.getAverageRatings = async (movieId) => {
     reviews.reviewCount = reviewCount;
   }
 
-  return reviews
-}
+  return reviews;
+};
 
 exports.topRatedMoviesPipeline = (type) => {
   return [
@@ -141,6 +142,7 @@ exports.topRatedMoviesPipeline = (type) => {
       $project: {
         title: 1,
         poster: "$poster.url",
+        responsivePosters: "$poster.responsive",
         reviewCount: { $size: "$reviews" },
       },
     },
@@ -152,5 +154,5 @@ exports.topRatedMoviesPipeline = (type) => {
     {
       $limit: 5,
     },
-  ]
-}
+  ];
+};

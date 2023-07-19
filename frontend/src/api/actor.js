@@ -69,16 +69,25 @@ export const updateActor = async (id, formData) => {
 };
 
 export const deleteActor = async (id) => {
-    const token = getToken();
-  
-    try {
-      const { data } = await client.delete("/actor/" + id, {
-        headers: {
-          authorization: "Bearer " + token,
-        },
-      });
-      return data;
-    } catch (error) {
-      return catchError(error);
-    }
-  };
+  const token = getToken();
+
+  try {
+    const { data } = await client.delete("/actor/" + id, {
+      headers: {
+        authorization: "Bearer " + token,
+      },
+    });
+    return data;
+  } catch (error) {
+    return catchError(error);
+  }
+};
+
+export const getActorProfile = async (id) => {
+  try {
+    const { data } = await client(`/actor/single/${id}`);
+    return data;
+  } catch (error) {
+    return catchError(error);
+  }
+};

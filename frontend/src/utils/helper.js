@@ -29,3 +29,12 @@ export const renderItem = (result) => {
   );
 };
 
+export const getPoster =(posters = []) => {
+    const {length} = posters
+ 
+    if(!length) return null
+   // if poster has more than selecting second poster
+   if(length > 2) return posters[1];
+    // other wise the first one
+    return posters[0]
+}

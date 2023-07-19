@@ -6,13 +6,20 @@ import { uploadMovie, uploadTrailer } from "../../api/movie";
 import MovieForm from "./MovieForm";
 import ModalContainer from "../modals/ModalContainer";
 
-export default function MovieUpload({ visible, onClose}) {
+export default function MovieUpload({ visible, onClose }) {
   const [videoSelected, setVideoSelected] = useState(false);
   const [videoUploaded, setvideoUploaded] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
   const { updateNotification } = useNotification();
   const [videoInfo, setvideoInfo] = useState({});
   const [busy, setBusy] = useState(false);
+
+  const resetState = () => {
+    setVideoSelected(false)
+    setvideoUploaded(false)
+    setUploadProgress(0)
+    setvideoInfo({})
+  }
 
   const handleTypeError = (error) => {
     updateNotification("error", error);
@@ -51,13 +58,15 @@ export default function MovieUpload({ visible, onClose}) {
     if (!videoInfo.url || !videoInfo.public_id)
       return updateNotification("error", "Trailer is missing!");
 
-      setBusy(true)
+    setBusy(true);
     data.append("trailer", JSON.stringify(videoInfo));
-    const res = await uploadMovie(data);
-    setBusy(false)
-    console.log(res);
+    const { error, movie } = await uploadMovie(data);
+    setBusy(false);
+    if (error) return updateNotification("error", error);
 
-    onClose()
+    updateNotification("success", "Movie uploads successfully!");
+    resetState()
+    onClose();
   };
 
   return (
@@ -76,7 +85,11 @@ export default function MovieUpload({ visible, onClose}) {
           handleChange={handleChange}
         ></TrailerSelector>
       ) : (
-        <MovieForm btnTitle="Upload" busy={busy} onSubmit={!busy ? handleSubmit: null} />
+        <MovieForm
+          btnTitle="Upload"
+          busy={busy}
+          onSubmit={!busy ? handleSubmit : null}
+        />
       )}
     </ModalContainer>
   );
@@ -92,13 +105,13 @@ const TrailerSelector = ({ visible, handleChange, onTypeError }) => {
         onTypeError={onTypeError}
         types={["mp4", "avi"]}
       >
-        <div
+        <label
           className="w-48 h-48 border border-dashed dark:border-dark-subtle border-light-subtle 
             rounded-full flex flex-col items-center justify-center  text-secondary dark:text-dark-subtle cursor-pointer"
         >
           <AiOutlineCloudUpload size={80} />
           <p>Drop your file here!</p>
-        </div>
+        </label>
       </FileUploader>
     </div>
   );
