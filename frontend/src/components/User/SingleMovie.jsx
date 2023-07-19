@@ -240,6 +240,7 @@ export default function SingleMovie() {
         onClose={hideRatingModal}
         onSuccess={handleOnRatingSuccess}
       />
+      
     </div>
   );
 }
