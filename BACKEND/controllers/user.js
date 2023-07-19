@@ -241,9 +241,9 @@ exports.signIn = async (req, res) => {
   const { _id, name, role, isVerified } = user;
 
   //found user and pwd matched
-  const jwtToekn = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
+  const jwtToken = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
 
   res.json({
-    user: { id: _id, name, role, email, token: jwtToekn, isVerified },
+    user: { id: _id, name, role, email, token: jwtToken, isVerified },
   });
 };

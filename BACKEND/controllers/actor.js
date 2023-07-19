@@ -113,7 +113,7 @@ exports.getSingleActor = async (req, res) => {
   if (!isValidObjectId(id)) return sendError(res, "Invalid request!");
   const actor = await Actor.findById(id);
 
-  if (!actor) return sendError(res, "Invalid request, acto not found!", 404);
+  if (!actor) return sendError(res, "Invalid request, actor not found!", 404);
   res.json(formatActor(actor));
 };
 

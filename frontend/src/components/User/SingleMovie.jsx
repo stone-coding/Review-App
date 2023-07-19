@@ -6,8 +6,9 @@ import Container from "../Container";
 import { Link } from "react-router-dom";
 import RatingStar from "../RatingStar";
 import RelatedMovies from "../RelatedMovies";
+import AddRatingModal from "../modals/AddRatingModal";
 
-const convertReviewCount = (count) => {
+const convertReviewCount = (count = 0) => {
   if (count <= 999) return count;
 
   return parseFloat(count / 1000).toFixed(2) + "k";
@@ -19,10 +20,12 @@ const convertDate = (date = "") => {
 
 export default function SingleMovie() {
   const [ready, setReady] = useState(false);
+  const [showRatingModal, setShowRatingModal] = useState(false);
   const [movie, setMovie] = useState({});
   const { updateNotification } = useNotification();
-  const { isLoggedIn } = useAuth();
-  const  navigate  = useNavigate();
+  const { authInfo } = useAuth();
+  const navigate = useNavigate();
+  const { isLoggedIn } = authInfo;
 
   const { movieId } = useParams();
 
@@ -36,6 +39,15 @@ export default function SingleMovie() {
 
   const handleOnRateMovie = () => {
     if (!isLoggedIn) return navigate("/auth/signin");
+    setShowRatingModal(true);
+  };
+
+  const hideRatingModal = () => {
+    setShowRatingModal(false);
+  };
+
+  const handleOnRatingSuccess = (reviews) => {
+    setMovie({ ...movie, reviews: { ...reviews } });
   };
 
   useEffect(() => {
@@ -222,6 +234,12 @@ export default function SingleMovie() {
           <RelatedMovies movieId={movieId} />
         </div>
       </Container>
+
+      <AddRatingModal
+        visible={showRatingModal}
+        onClose={hideRatingModal}
+        onSuccess={handleOnRatingSuccess}
+      />
     </div>
   );
 }
