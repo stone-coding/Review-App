@@ -12,6 +12,8 @@ import { useAuth } from './hooks'
 import AdminNavigator from './components/navigator/AdminNavigator'
 import SingleMovie from './components/User/SingleMovie'
 import MovieReviews from './components/User/MovieReviews'
+import SearchMovies from './components/User/SearchMovies'
+
 
 
 
@@ -33,6 +35,7 @@ export default function App() {
           <Route path="/auth/reset-password" element={<ConfirmPassword />} />
           <Route path="/movie/:movieId" element={<SingleMovie />} />
           <Route path="/movie/reviews/:movieId" element={<MovieReviews />} />
+          <Route path="/movie/search" element={<SearchMovies/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
     </>

@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 
+const defaultInputStyle =
+  "dark:border-dark-subtle border-light-subtle dark:focus:border-white focus:border-primary dark:text-white text-lg";
+
 export default function AppSearchFrom({
   showResetIcon,
   placeholder,
+  inputClassName = defaultInputStyle,
   onSubmit,
   onReset,
 }) {
@@ -15,16 +19,18 @@ export default function AppSearchFrom({
   };
 
   const handleReset = () => {
-    setValue('')
-    onReset()
-  }
+    setValue("");
+    onReset();
+  };
 
   return (
     <form className="relative" onSubmit={handleOnSubmit}>
       <input
         type="text"
-        className="border-2 dark:border-dark-subtle border-light-subtle dark:focus:border-white focus:border-primary 
-        dark:text-white transition bg-transparent rounded text-lg p-1 outline-none"
+        className={
+          "border-2 transition bg-transparent rounded p-1 outline-none " +
+          inputClassName
+        }
         placeholder={placeholder}
         value={value}
         onChange={({ target }) => setValue(target.value)}

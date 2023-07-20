@@ -12,12 +12,14 @@ const trimTitle = (text = "") => {
 
 export default function MovieList({ title, movies = [] }) {
   if (!movies.length) return null;
- 
+
   return (
     <div>
-      <h1 className="text-2xl dark:text-white text-secondary font-semibold mb-4">
-        {title}
-      </h1>
+      {title ? (
+        <h1 className="text-2xl dark:text-white text-secondary font-semibold mb-4">
+          {title}
+        </h1>
+      ) : null}
 
       <GridContainer>
         {movies.map((movie) => {
@@ -29,17 +31,21 @@ export default function MovieList({ title, movies = [] }) {
 }
 
 const ListItem = ({ movie }) => {
-  const { id, responsivePosters , title, poster, reviews } = movie;
+  const { id, responsivePosters, title, poster, reviews } = movie;
   return (
     <Link to={"/movie/" + id}>
-      <img className="aspect-video object-cover" src={getPoster(responsivePosters) || poster} alt={title} />
+      <img
+        className="aspect-video object-cover w-full"
+        src={getPoster(responsivePosters) || poster}
+        alt={title}
+      />
       <h1
         className="text-lg dark:text-white text-secondary font-semibold"
         title={title}
       >
         {trimTitle(title)}
       </h1>
-      <RatingStar rating={reviews.ratingAvg}/>
+      <RatingStar rating={reviews.ratingAvg} />
     </Link>
   );
 };
