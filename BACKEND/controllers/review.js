@@ -35,7 +35,7 @@ exports.addReview = async (req, res) => {
   //save new review
   await newReview.save();
 
-  const reviews =  await getAverageRatings(movie._id)
+  const reviews = await getAverageRatings(movie._id);
 
   res.json({ message: "Your review has been added.", reviews });
 };
@@ -95,7 +95,7 @@ exports.getReviewsByMovie = async (req, res) => {
       path: "reviews",
       populate: { path: "owner", select: "name" }, // select name is select owner id here
     })
-    .select("reviews");
+    .select("reviews title");
 
   const reviews = movie.reviews.map((r) => {
     const { owner, content, rating, _id: reviewId } = r;
@@ -111,7 +111,5 @@ exports.getReviewsByMovie = async (req, res) => {
     };
   });
 
-  res.json({reviews});
+  res.json({ movie: { title: movie.title, reviews } });
 };
-
-
