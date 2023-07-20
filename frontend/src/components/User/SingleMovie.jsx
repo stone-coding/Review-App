@@ -9,12 +9,13 @@ import RelatedMovies from "../RelatedMovies";
 import AddRatingModal from "../modals/AddRatingModal";
 import CustomButtonLink from "../CustomButtonLink";
 import ProfileModal from "../modals/ProfileModal";
+import { convertReviewCount } from "../../utils/helper";
 
-const convertReviewCount = (count = 0) => {
-  if (count <= 999) return count;
+// export const convertReviewCount = (count = 0) => {
+//   if (count <= 999) return count;
 
-  return parseFloat(count / 1000).toFixed(2) + "k";
-};
+//   return parseFloat(count / 1000).toFixed(2) + "k";
+// };
 
 const convertDate = (date = "") => {
   return date.split("T")[0];
