@@ -1,0 +1,913 @@
+[{
+  "_id": {
+    "$oid": "64ae730aaff65758cf4625cf"
+  },
+  "title": "Titanic",
+  "storyLine": "James Cameron's \"Titanic\" is an epic, action-packed romance set against the ill-fated maiden voyage of the R.M.S. Titanic; the pride and joy of the White Star Line and, at the time, the largest moving object ever built. She was the most luxurious liner of her era -- the \"ship of dreams\" -- which ultimately carried over 1,500 people to their death in the ice cold waters of the North Atlantic in the early hours of April 15, 1912.",
+  "releaseDate": {
+    "$date": "1997-12-19T00:00:00.000Z"
+  },
+  "status": "public",
+  "type": "Film",
+  "genres": [
+    "History",
+    "Romance"
+  ],
+  "tags": [
+    "Love Story",
+    "Romance",
+    "action"
+  ],
+  "cast": [
+    {
+      "actor": {
+        "$oid": "64ae6fbaaff65758cf4625b9"
+      },
+      "roleAs": "Cop",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b44ba6db69efcc25fb4de8"
+      }
+    }
+  ],
+  "writers": [],
+  "trailer": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/video/upload/v1689154059/d6jdpytk1pic72oynztp.mp4",
+    "public_id": "d6jdpytk1pic72oynztp"
+  },
+  "reviews": [
+    {
+      "$oid": "64b407beca2e3f3f9ca9dfb6"
+    }
+  ],
+  "language": "English",
+  "director": {
+    "$oid": "64ae6fbaaff65758cf4625b9"
+  },
+  "poster": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689154314/gfn305zhwttp0zblc4xx.jpg",
+    "public_id": "gfn305zhwttp0zblc4xx",
+    "responsive": [
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_640/v1689154314/gfn305zhwttp0zblc4xx.jpg",
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_516/v1689154314/gfn305zhwttp0zblc4xx.jpg",
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_50/v1689154314/gfn305zhwttp0zblc4xx.jpg"
+    ]
+  },
+  "createdAt": {
+    "$date": "2023-07-12T09:31:56.411Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-16T19:57:26.035Z"
+  },
+  "__v": 6
+},
+{
+  "_id": {
+    "$oid": "64ae775eaff65758cf4625e3"
+  },
+  "title": "The Batman",
+  "storyLine": "Batman ventures into Gotham City's underworld when a sadistic killer leaves behind a trail of cryptic clues. As the evidence begins to lead closer to home and the scale of the perpetrator's plans become clear, he must forge new relationships, unmask the culprit and bring justice to the abuse of power and corruption that has long plagued the metropolis.",
+  "releaseDate": {
+    "$date": "2023-04-03T00:00:00.000Z"
+  },
+  "status": "public",
+  "type": "Film",
+  "genres": [
+    "Superhero",
+    "Action"
+  ],
+  "tags": [
+    "batman",
+    "hollywood",
+    "action"
+  ],
+  "cast": [
+    {
+      "actor": {
+        "$oid": "64ae76afaff65758cf4625d7"
+      },
+      "roleAs": "Cop",
+      "leadActor": true,
+      "_id": {
+        "$oid": "64b761d4c009253cfc2a0771"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b761a6c009253cfc2a070b"
+      },
+      "roleAs": "The Batman",
+      "leadActor": true,
+      "_id": {
+        "$oid": "64b761d4c009253cfc2a0772"
+      }
+    }
+  ],
+  "writers": [
+    {
+      "$oid": "64ae76afaff65758cf4625d7"
+    }
+  ],
+  "trailer": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/video/upload/v1689155314/rbslbgwirufzafyb2qh0.mp4",
+    "public_id": "rbslbgwirufzafyb2qh0"
+  },
+  "reviews": [
+    {
+      "$oid": "64b45256c393e5435f4af767"
+    },
+    {
+      "$oid": "64b456ddbb910c51678a3f01"
+    },
+    {
+      "$oid": "64b89a9b199f97dd6516663c"
+    }
+  ],
+  "language": "English",
+  "director": {
+    "$oid": "64ae76afaff65758cf4625d7"
+  },
+  "poster": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689155422/as9li74ivpgiex9g49ce.jpg",
+    "public_id": "as9li74ivpgiex9g49ce",
+    "responsive": [
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_640/v1689155422/as9li74ivpgiex9g49ce.jpg",
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_603/v1689155422/as9li74ivpgiex9g49ce.jpg",
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_50/v1689155422/as9li74ivpgiex9g49ce.jpg"
+    ]
+  },
+  "createdAt": {
+    "$date": "2023-07-12T09:50:24.147Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-20T02:23:23.545Z"
+  },
+  "__v": 10
+},
+{
+  "_id": {
+    "$oid": "64aff197a8f88c4644330faa"
+  },
+  "title": "Dune",
+  "storyLine": "Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people. As malevolent forces explode into conflict over the planet's exclusive supply of the most precious resource in existence, only those who can conquer their own fear will survive.",
+  "releaseDate": {
+    "$date": "2021-10-22T00:00:00.000Z"
+  },
+  "status": "public",
+  "type": "Film",
+  "genres": [
+    "Action",
+    "Adventure",
+    "Drama"
+  ],
+  "tags": [
+    "destiny",
+    "combat",
+    "mother son relationship",
+    "mind control",
+    "action"
+  ],
+  "cast": [
+    {
+      "actor": {
+        "$oid": "64aff15aa8f88c4644330f9d"
+      },
+      "roleAs": "Cop",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b44b39974fc25ce0450f05"
+      }
+    }
+  ],
+  "writers": [],
+  "trailer": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/video/upload/v1689251802/kzx0jbvfrnmwkdhgnbxp.mp4",
+    "public_id": "kzx0jbvfrnmwkdhgnbxp"
+  },
+  "reviews": [
+    {
+      "$oid": "64b8317197cefc2f3bb806d2"
+    }
+  ],
+  "language": "English",
+  "director": {
+    "$oid": "64afef8ea8f88c4644330f92"
+  },
+  "poster": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689342906/srsxklscguam0sakht5i.jpg",
+    "public_id": "srsxklscguam0sakht5i",
+    "responsive": [
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_640/v1689342906/srsxklscguam0sakht5i.jpg",
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_567/v1689342906/srsxklscguam0sakht5i.jpg",
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_50/v1689342906/srsxklscguam0sakht5i.jpg"
+    ]
+  },
+  "createdAt": {
+    "$date": "2023-07-13T12:44:09.161Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-19T18:54:41.119Z"
+  },
+  "__v": 50
+},
+{
+  "_id": {
+    "$oid": "64b55dc9a56a19bda38918fe"
+  },
+  "title": "Mission Impossible",
+  "storyLine": "Ethan Hunt and the IMF team must track down a terrifying new weapon that threatens all of humanity if it falls into the wrong hands. With control of the future and the fate of the world at stake, a deadly race around the globe begins. Confronted by a mysterious, all-powerful enemy, Ethan is forced to consider that nothing can matter more than the mission -- not even the lives of those he cares about most.",
+  "releaseDate": {
+    "$date": "2023-07-12T00:00:00.000Z"
+  },
+  "status": "public",
+  "type": "Film",
+  "genres": [
+    "Action",
+    "Adventure",
+    "Thriller"
+  ],
+  "tags": [
+    "spy",
+    "one person army action",
+    "hero",
+    "super hero",
+    "artificial intelligence"
+  ],
+  "cast": [
+    {
+      "actor": {
+        "$oid": "64ad658e631b6ac2bf84dc3d"
+      },
+      "roleAs": "Ethan Hunt",
+      "leadActor": true,
+      "_id": {
+        "$oid": "64b57022c009253cfc29bdcb"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b5466aa56a19bda3891809"
+      },
+      "roleAs": "\tGrace",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b57022c009253cfc29bdcc"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b547dda56a19bda3891816"
+      },
+      "roleAs": "Luther Stickell",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b57022c009253cfc29bdcd"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b5481aa56a19bda3891819"
+      },
+      "roleAs": "Benji Dunn",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b57022c009253cfc29bdce"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b54874a56a19bda3891820"
+      },
+      "roleAs": "Ilsa Faust",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b57022c009253cfc29bdcf"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b54903a56a19bda3891827"
+      },
+      "roleAs": "The White Widow",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b57022c009253cfc29bdd0"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b54969a56a19bda389182a"
+      },
+      "roleAs": "Gabriel",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b57022c009253cfc29bdd1"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b54a1da56a19bda3891831"
+      },
+      "roleAs": "Paris",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b57022c009253cfc29bdd2"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b54a56a56a19bda3891834"
+      },
+      "roleAs": "Kittridge",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b57022c009253cfc29bdd3"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b54bb6a56a19bda3891849"
+      },
+      "roleAs": "Briggs",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b57022c009253cfc29bdd4"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b54ca6a56a19bda3891868"
+      },
+      "roleAs": "Degas",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b57022c009253cfc29bdd5"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b54d21a56a19bda3891891"
+      },
+      "roleAs": "Zola",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b57022c009253cfc29bdd6"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b54d4ea56a19bda3891894"
+      },
+      "roleAs": "Marie",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b57022c009253cfc29bdd7"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b54d9aa56a19bda3891897"
+      },
+      "roleAs": "Denlinger",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b57022c009253cfc29bdd8"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b54dd5a56a19bda389189a"
+      },
+      "roleAs": "NRO",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b57022c009253cfc29bdd9"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b54e07a56a19bda38918a4"
+      },
+      "roleAs": "NSA",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b57022c009253cfc29bdda"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b54e3aa56a19bda38918a7"
+      },
+      "roleAs": "DIA",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b57022c009253cfc29bddb"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b54e79a56a19bda38918aa"
+      },
+      "roleAs": "JSOC",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b57022c009253cfc29bddc"
+      }
+    }
+  ],
+  "writers": [
+    {
+      "$oid": "64b55b8ca56a19bda38918c6"
+    },
+    {
+      "$oid": "64b55b2ca56a19bda38918c3"
+    },
+    {
+      "$oid": "64b55a7ea56a19bda38918c0"
+    }
+  ],
+  "trailer": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/video/upload/v1689607100/msxeoynmcvepeihywapx.mp4",
+    "public_id": "msxeoynmcvepeihywapx"
+  },
+  "reviews": [
+    {
+      "$oid": "64b56072a56a19bda3891b06"
+    },
+    {
+      "$oid": "64b8bab315123dd3bf8e1097"
+    }
+  ],
+  "language": "English",
+  "director": {
+    "$oid": "64b55a7ea56a19bda38918c0"
+  },
+  "poster": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689607626/bmicd2abkccbjyo7isab.jpg",
+    "public_id": "bmicd2abkccbjyo7isab",
+    "responsive": [
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_640/v1689607626/bmicd2abkccbjyo7isab.jpg",
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_600/v1689607626/bmicd2abkccbjyo7isab.jpg",
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_50/v1689607626/bmicd2abkccbjyo7isab.jpg"
+    ]
+  },
+  "createdAt": {
+    "$date": "2023-07-17T15:27:08.331Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-20T04:40:19.779Z"
+  },
+  "__v": 4
+},
+{
+  "_id": {
+    "$oid": "64b55f6ea56a19bda3891a6f"
+  },
+  "title": "Landscape",
+  "storyLine": "Landscape storyline",
+  "releaseDate": {
+    "$date": "2023-07-17T00:00:00.000Z"
+  },
+  "status": "public",
+  "type": "Film",
+  "genres": [
+    "Romance",
+    "Sci-Fi"
+  ],
+  "tags": [
+    "flow",
+    "grass"
+  ],
+  "cast": [
+    {
+      "actor": {
+        "$oid": "64ada68d717efc05c9550164"
+      },
+      "roleAs": "Cop",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b5701ec009253cfc29bd86"
+      }
+    }
+  ],
+  "writers": [
+    {
+      "$oid": "64ada68d717efc05c9550164"
+    }
+  ],
+  "trailer": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/video/upload/v1689607967/zbnj83kdavtilvio9cvv.mp4",
+    "public_id": "zbnj83kdavtilvio9cvv"
+  },
+  "reviews": [
+    {
+      "$oid": "64b56044a56a19bda3891aee"
+    }
+  ],
+  "language": "English",
+  "director": {
+    "$oid": "64ada68d717efc05c9550164"
+  },
+  "poster": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689608050/rsm6nn2rkftnbmuaqgtu.jpg",
+    "public_id": "rsm6nn2rkftnbmuaqgtu",
+    "responsive": [
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_640/v1689608050/rsm6nn2rkftnbmuaqgtu.jpg",
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_429/v1689608050/rsm6nn2rkftnbmuaqgtu.jpg",
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_50/v1689608050/rsm6nn2rkftnbmuaqgtu.jpg"
+    ]
+  },
+  "createdAt": {
+    "$date": "2023-07-17T15:34:13.195Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T16:45:18.528Z"
+  },
+  "__v": 2
+},
+{
+  "_id": {
+    "$oid": "64b6ac0ec009253cfc29bf44"
+  },
+  "title": "House of cards",
+  "storyLine": "Majority House Whip Francis Underwood takes you on a long journey as he exacts his vengeance on those he feels wronged him - that is, his own cabinet members including the President of the United States himself. Dashing, cunning, methodical and vicious, Frank Underwood along with his equally manipulative yet ambiguous wife, Claire, take Washington by storm through climbing the hierarchical ladder to power in this Americanized recreation of the BBC series of the same name.",
+  "releaseDate": {
+    "$date": "2018-11-02T00:00:00.000Z"
+  },
+  "status": "public",
+  "type": "Web Series",
+  "genres": [
+    "Drama"
+  ],
+  "tags": [
+    "political drama",
+    "government corruption",
+    "political power",
+    "breaking the fourth war",
+    "media manipulation "
+  ],
+  "cast": [
+    {
+      "actor": {
+        "$oid": "64b5b19ec009253cfc29beb1"
+      },
+      "roleAs": "Claire Underwood",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b6ac0ec009253cfc29bf45"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b5b211c009253cfc29bebb"
+      },
+      "roleAs": "Francis Underwood",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b6ac0ec009253cfc29bf46"
+      }
+    }
+  ],
+  "writers": [
+    {
+      "$oid": "64b5b211c009253cfc29bebb"
+    },
+    {
+      "$oid": "64b5b1e5c009253cfc29beb4"
+    },
+    {
+      "$oid": "64b5b19ec009253cfc29beb1"
+    }
+  ],
+  "trailer": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/video/upload/v1689692831/uggheiktgmyu6ehkl8j6.mp4",
+    "public_id": "uggheiktgmyu6ehkl8j6"
+  },
+  "reviews": [],
+  "language": "English",
+  "director": {
+    "$oid": "64b5b211c009253cfc29bebb"
+  },
+  "poster": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689693199/pcrmwsgqamr5y1yfk8ti.jpg",
+    "public_id": "pcrmwsgqamr5y1yfk8ti",
+    "responsive": [
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_640/v1689693199/pcrmwsgqamr5y1yfk8ti.jpg",
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_481/v1689693199/pcrmwsgqamr5y1yfk8ti.jpg",
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_50/v1689693199/pcrmwsgqamr5y1yfk8ti.jpg"
+    ]
+  },
+  "createdAt": {
+    "$date": "2023-07-18T15:13:20.618Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T15:13:20.618Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6b605c009253cfc29bfd6"
+  },
+  "title": "The Last Ship",
+  "storyLine": "Naval Destroyer Nathan James is sent on what they're told is a research mission in the Arctic. Accompanying them is scientist, Rachel Scott. After a few months in the Arctic while Scott is on the ice doing research, some men attack them. They get back to the ship and the Commander, Tom Chandler asks the doctor what's going on. She says that a deadly disease broke out a few months ago. At first, they thought it was contained but they had no cure. They felt that the cure was in the Arctic which why she's here. But she has since received word that it has now spread to most of the globe. Chandler tries to call the President but learns the President and Vice President are dead and the US government might not have long to survive. The current President tells him that the Nathan James was not in the hot zone so he and his crew are OK. But now it's up to them to safeguard Scott because she holds the key to the planet's survival. But there are those who want the cure too and they will do whatever they have to, to get it. So they keep going and trying to find supplies and what they need so Scott can make the cure.",
+  "releaseDate": {
+    "$date": "2014-06-12T00:00:00.000Z"
+  },
+  "status": "public",
+  "type": "Web Series",
+  "genres": [
+    "War"
+  ],
+  "tags": [
+    "navy",
+    "pandemic",
+    "military",
+    "soldier"
+  ],
+  "cast": [
+    {
+      "actor": {
+        "$oid": "64b6ae3dc009253cfc29bf97"
+      },
+      "roleAs": "Tom Chandler",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b6b605c009253cfc29bfd7"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b6ae7dc009253cfc29bf9a"
+      },
+      "roleAs": "XO Mike Slattery, Captain Mike Slattery, Admiral Mike Slattery",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b6b605c009253cfc29bfd8"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b54dd5a56a19bda389189a"
+      },
+      "roleAs": "CMC Jeter, Russell Jeter",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b6b605c009253cfc29bfd9"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b6af4bc009253cfc29bfa2"
+      },
+      "roleAs": "Lt. Danny Green",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b6b605c009253cfc29bfda"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b6af7dc009253cfc29bfa5"
+      },
+      "roleAs": "Lt. Kara Foster, Cmdr. Kara Green, Commander Kara Green nee Foster",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b6b605c009253cfc29bfdb"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b6afb0c009253cfc29bfa8"
+      },
+      "roleAs": "Lt. Carlton Burk, Cmdr. Carlton Burk",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b6b605c009253cfc29bfdc"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b6b000c009253cfc29bfab"
+      },
+      "roleAs": "Miller",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b6b605c009253cfc29bfdd"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b6b044c009253cfc29bfae"
+      },
+      "roleAs": "Lt. Alisha Granderson",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b6b605c009253cfc29bfde"
+      }
+    }
+  ],
+  "writers": [
+    {
+      "$oid": "64b6b35fc009253cfc29bfb8"
+    }
+  ],
+  "trailer": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/video/upload/v1689695236/vkv5uv6sta6s3crx6wzq.mp4",
+    "public_id": "vkv5uv6sta6s3crx6wzq"
+  },
+  "reviews": [],
+  "language": "English",
+  "director": {
+    "$oid": "64b6b29ec009253cfc29bfb5"
+  },
+  "poster": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689695750/xhdussegkjl4dpllgohw.jpg",
+    "public_id": "xhdussegkjl4dpllgohw",
+    "responsive": [
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_640/v1689695750/xhdussegkjl4dpllgohw.jpg",
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_422/v1689695750/xhdussegkjl4dpllgohw.jpg",
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_50/v1689695750/xhdussegkjl4dpllgohw.jpg"
+    ]
+  },
+  "createdAt": {
+    "$date": "2023-07-18T15:55:51.721Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T15:55:51.721Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6c2bec009253cfc29c23b"
+  },
+  "title": "Lost In Space",
+  "storyLine": "Set 30 years in the future, colonization in space is now a reality, and the Robinson family is among those tested and selected to make a new life for themselves in a better world. But when the new colonists find themselves abruptly torn off course en route to their new home they must forge new alliances and work together to survive in a dangerous alien environment, light-years from their original destination. Stranded along with the Robinsons are two outsiders who find themselves thrown together by circumstance and a mutual knack for deception. The charismatic Dr. Smith is a master manipulator with an inscrutable end game. And the roguish, but charming Don West is a highly-skilled, blue collar contractor, who had no intention of joining the colony, let alone crash landing on a lost planet.",
+  "releaseDate": {
+    "$date": "2018-04-13T00:00:00.000Z"
+  },
+  "status": "public",
+  "type": "TV Series",
+  "genres": [
+    "Adventure",
+    "Family",
+    "Drama"
+  ],
+  "tags": [
+    "remark",
+    "three world serie title",
+    "family relationship",
+    "reboot serie",
+    "spaceship"
+  ],
+  "cast": [
+    {
+      "actor": {
+        "$oid": "64b6bc23c009253cfc29c1b3"
+      },
+      "roleAs": " John Robinson",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b6d8bdc009253cfc29c33d"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b6bc8fc009253cfc29c1b6"
+      },
+      "roleAs": "Maureen Robinson",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b6d8bdc009253cfc29c33e"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b6bcbcc009253cfc29c1b9"
+      },
+      "roleAs": "Will Robinson",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b6d8bdc009253cfc29c33f"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b6bd36c009253cfc29c1bf"
+      },
+      "roleAs": "Penny Robinson",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b6d8bdc009253cfc29c340"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b6bf63c009253cfc29c1e9"
+      },
+      "roleAs": "Dr. Smith ",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b6d8bdc009253cfc29c341"
+      }
+    },
+    {
+      "actor": {
+        "$oid": "64b6bf3ac009253cfc29c1e6"
+      },
+      "roleAs": "Don West",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b6d8bdc009253cfc29c342"
+      }
+    }
+  ],
+  "writers": [
+    {
+      "$oid": "64b6ba5bc009253cfc29c1b0"
+    }
+  ],
+  "trailer": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/video/upload/v1689698247/h6ta034q3bvelwpxotpf.mp4",
+    "public_id": "h6ta034q3bvelwpxotpf"
+  },
+  "reviews": [],
+  "language": "English",
+  "director": {
+    "$oid": "64b6ba2ec009253cfc29c1ad"
+  },
+  "poster": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689704638/gdh7grda336gagyft3rn.jpg",
+    "public_id": "gdh7grda336gagyft3rn",
+    "responsive": [
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_640/v1689704638/gdh7grda336gagyft3rn.jpg",
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_484/v1689704638/gdh7grda336gagyft3rn.jpg",
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_50/v1689704638/gdh7grda336gagyft3rn.jpg"
+    ]
+  },
+  "createdAt": {
+    "$date": "2023-07-18T16:50:08.203Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T18:24:00.154Z"
+  },
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "64b871b1b4bf37a43bec7847"
+  },
+  "title": "litchi",
+  "storyLine": "litchi",
+  "releaseDate": {
+    "$date": "2023-07-19T00:00:00.000Z"
+  },
+  "status": "public",
+  "type": "Documentary",
+  "genres": [
+    "Documentary"
+  ],
+  "tags": [
+    "fruit",
+    "delicious"
+  ],
+  "cast": [
+    {
+      "actor": {
+        "$oid": "64ae76afaff65758cf4625d7"
+      },
+      "roleAs": "Cop",
+      "leadActor": false,
+      "_id": {
+        "$oid": "64b871b1b4bf37a43bec7848"
+      }
+    }
+  ],
+  "writers": [],
+  "trailer": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/video/upload/v1689809191/zxnsp0dqvz23qzjl9oau.mp4",
+    "public_id": "zxnsp0dqvz23qzjl9oau"
+  },
+  "reviews": [],
+  "language": "Chinese",
+  "director": {
+    "$oid": "64ae76afaff65758cf4625d7"
+  },
+  "poster": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689809332/jry5rrtc0p12hbwahlit.jpg",
+    "public_id": "jry5rrtc0p12hbwahlit",
+    "responsive": [
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_640/v1689809332/jry5rrtc0p12hbwahlit.jpg",
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_419/v1689809332/jry5rrtc0p12hbwahlit.jpg",
+      "https://res.cloudinary.com/dvzc9rcsd/image/upload/c_scale,w_50/v1689809332/jry5rrtc0p12hbwahlit.jpg"
+    ]
+  },
+  "createdAt": {
+    "$date": "2023-07-19T23:28:54.418Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-19T23:28:54.418Z"
+  },
+  "__v": 0
+}]

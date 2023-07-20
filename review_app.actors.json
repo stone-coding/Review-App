@@ -1,0 +1,969 @@
+[{
+  "_id": {
+    "$oid": "64ad658e631b6ac2bf84dc3d"
+  },
+  "name": "Tom Cruise",
+  "about": "Thomas Cruise Mapother IV, known professionally as Tom Cruise, is an American actor and producer. One of the world's highest-paid actors, he has received various accolades, including an Honorary Palme d'Or and three Golden Globe Awards, in addition to nominations for four Academy Awards.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689085326/m0wp89ybcpzdnruub1rw.jpg",
+    "public_id": "m0wp89ybcpzdnruub1rw"
+  },
+  "createdAt": {
+    "$date": "2023-07-11T14:22:07.501Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-11T14:22:07.501Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ad6763bcb4f18ef5c49607"
+  },
+  "name": "Wentworth Miller",
+  "about": "Wentworth Earl Miller III is an American-British actor and screenwriter. He rose to prominence following his starring role as Michael Scofield in the Fox series Prison Break, for which he received a nomination for the Golden Globe Award for Best Actor – Television Series Drama in 2005.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689085796/wyoge135d1movj6bxfk0.jpg",
+    "public_id": "wyoge135d1movj6bxfk0"
+  },
+  "createdAt": {
+    "$date": "2023-07-11T14:29:56.595Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-11T14:29:56.595Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ad69c8bcb4f18ef5c4960d"
+  },
+  "name": "Sarah Wayne Callies",
+  "about": "Sarah Wayne Callies is an American actress. She is known for starring as Sara Tancredi in Fox's Prison Break and as Lori Grimes in AMC's The Walking Dead. She has also starred as Katie Bowman in USA Network's Colony and Robin Perry in NBC's Council of Dads and has had film roles in Whisper, Blac Gold, and The Show.",
+  "gender": "female",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689086409/oresjpay0m8boicrrfl7.jpg",
+    "public_id": "oresjpay0m8boicrrfl7"
+  },
+  "createdAt": {
+    "$date": "2023-07-11T14:40:09.656Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-11T14:40:09.656Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ada68d717efc05c9550164"
+  },
+  "name": "Tom Hardy",
+  "about": "Edward Thomas Hardy CBE is an English actor, producer and screenwriter. After studying acting at the Drama Centre London, he made his film debut in Ridley Scott's Black Hawk Down.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689101965/auwflp0pqkygngarvgs4.jpg",
+    "public_id": "auwflp0pqkygngarvgs4"
+  },
+  "createdAt": {
+    "$date": "2023-07-11T18:59:25.889Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-11T18:59:25.889Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ae6fbaaff65758cf4625b9"
+  },
+  "name": "James Cameron",
+  "about": "James Francis Cameron CC is a Canadian filmmaker. A major figure in the post-New Hollywood era, Cameron is considered one of the industry's most innovative filmmakers, regularly making use of novel technologies.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689153469/ernqzgkcnumhysczojyl.jpg",
+    "public_id": "ernqzgkcnumhysczojyl"
+  },
+  "createdAt": {
+    "$date": "2023-07-12T09:17:50.318Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-15T23:27:55.776Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ae76afaff65758cf4625d7"
+  },
+  "name": "Matt Reeves",
+  "about": "Matt Reeves is an American filmmaker who first gained recognition for the WB drama series Felicity, which he co-created with J. J. Abrams. Reeves came to widespread attention for directing the hit monster film Cloverfield.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689155247/cjm5viaown4aqsewegs8.jpg",
+    "public_id": "cjm5viaown4aqsewegs8"
+  },
+  "createdAt": {
+    "$date": "2023-07-12T09:47:28.031Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-12T09:47:28.031Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64afef8ea8f88c4644330f92"
+  },
+  "name": "Denis Villeneuve",
+  "about": "Denis Villeneuve is a French-Canadian filmmaker. He is a four-time recipient of the Canadian Screen Award (formerly Genie Award) for Best Direction, winning for Maelström in 2001, Polytechnique in 2009, Incendies in 2010 and Enemy in 2013. The first three of these films also won the Canadian Screen Award for Best Motion Picture, while the latter was awarded the prize for best Canadian film of the year by the Toronto Film Critics Association.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689251727/grfoeycg0sowvwfsiavh.jpg",
+    "public_id": "grfoeycg0sowvwfsiavh"
+  },
+  "createdAt": {
+    "$date": "2023-07-13T12:35:27.947Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-13T12:35:27.947Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64aff15aa8f88c4644330f9d"
+  },
+  "name": "Oscar Isaac",
+  "about": "Óscar Isaac Hernández Estrada is an American actor. Recognized for his versatility, he has been credited with breaking stereotypes about Latino characters in Hollywood.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689252186/rc8schppivkfsdpjtbhf.jpg",
+    "public_id": "rc8schppivkfsdpjtbhf"
+  },
+  "createdAt": {
+    "$date": "2023-07-13T12:43:07.131Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-14T19:16:22.114Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b5466aa56a19bda3891809"
+  },
+  "name": "Hayley Atwell",
+  "about": "Hayley Elizabeth Atwell is a British and American actress. Born and raised in London, Atwell studied acting at the Guildhall School of Music and Drama, and made her stage debut in a 2005 production of Prometheus Bound.",
+  "gender": "female",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689601642/wjs20sic5ihip9s5htkp.jpg",
+    "public_id": "wjs20sic5ihip9s5htkp"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T13:47:23.254Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T13:47:23.254Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b547dda56a19bda3891816"
+  },
+  "name": "Ving Rhames",
+  "about": "Irving Rameses Rhames is an American actor. He is known for his supporting roles as IMF Agent Luther Stickell in all seven Mission: Impossible films and gang kingpin Marsellus Wallace in Pulp Fiction.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689602013/r3qu4emekmvprrmgknkx.jpg",
+    "public_id": "r3qu4emekmvprrmgknkx"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T13:53:33.854Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T13:53:33.854Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b5481aa56a19bda3891819"
+  },
+  "name": "Simon Pegg",
+  "about": "Simon John Pegg is an English actor, comedian and screenwriter. He came to prominence in the UK as the co-creator of the Channel 4 sitcom Spaced, directed by Edgar Wright.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689602074/aswjzeljkph0obmjl2ub.jpg",
+    "public_id": "aswjzeljkph0obmjl2ub"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T13:54:35.074Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T13:54:35.074Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b54874a56a19bda3891820"
+  },
+  "name": "Rebecca Ferguson",
+  "about": "Rebecca Louisa Ferguson Sundström is a Swedish actress. She began her acting career with the Swedish soap opera Nya tider and went on to star in the slasher film Drowning Ghost.",
+  "gender": "female",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689602164/zw0gbetkha3hdroi9ekr.jpg",
+    "public_id": "zw0gbetkha3hdroi9ekr"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T13:56:04.603Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T13:56:04.603Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b54903a56a19bda3891827"
+  },
+  "name": "Vanessa Kirby",
+  "about": "Vanessa Nuala Kirby[2] (born 18 April 1988) is an English actress. She made her professional acting debut on stage with a production of Arthur Miller's All My Sons (2010), and followed this with acclaimed performances in the plays A Midsummer Night's Dream (2010), As You Like It (2010), Women Beware Women (2011), Three Sisters (2012), and as Stella Kowalski in A Streetcar Named Desire (2014).",
+  "gender": "female",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689602308/nkqsxbcf4o0n0vquo012.jpg",
+    "public_id": "nkqsxbcf4o0n0vquo012"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T13:58:28.761Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T13:58:28.761Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b54969a56a19bda389182a"
+  },
+  "name": "Esai Morales",
+  "about": "Esai Manuel Morales Jr. (born October 1, 1962) is an American actor. He has had notable roles in the films Bad Boys with Sean Penn and La Bamba with Lou Diamond Phillips. His television roles include the PBS 2002 drama series American Family, the Showtime series Resurrection Blvd. (2000–2002), portraying Lt. Tony Rodriguez on NYPD Blue (2001–2004), Joseph Adama in the science fiction series Caprica (2009–2010), Camino del Rio in the Netflix original series Ozark (2017) and as the DC Comics villain Deathstroke / Slade Wilson in the superhero series Titans (2018).",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689602409/vemhv6yluphodsczrzlp.jpg",
+    "public_id": "vemhv6yluphodsczrzlp"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T14:00:10.542Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T14:00:10.542Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b54a1da56a19bda3891831"
+  },
+  "name": "Pom Klementieff",
+  "about": "Pom Alexandra Klementieff is a French actress. She was trained at the Cours Florent drama school in Paris and appeared in such French films as The Easy Way and Sleepless Night, before making her American film debut in Oldboy. In 2019, she was featured as Roxette in the \"Striking Vipers\" episode of Black Mirror.",
+  "gender": "female",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689602589/f0cab3qzej1t8culwywj.jpg",
+    "public_id": "f0cab3qzej1t8culwywj"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T14:03:10.264Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T14:03:10.264Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b54a56a56a19bda3891834"
+  },
+  "name": "Henry Czerny",
+  "about": "Henry Czerny (/ˈtʃɛərni/ CHAIR-nee; born February 8, 1959) is a Canadian stage, film, and television actor. He is known for his roles in the films The Boys of St. Vincent, Mission: Impossible, Clear and Present Danger, The Ice Storm, The Exorcism of Emily Rose, Fido, Remember, Ready or Not and Scream VI and has appeared in numerous television programs in both guest and starring roles, including a regular role as Conrad Grayson on the ABC primetime soap opera Revenge.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689602647/vnwbvabc8kxifqsfyohg.jpg",
+    "public_id": "vnwbvabc8kxifqsfyohg"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T14:04:08.188Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T14:04:08.188Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b54bb6a56a19bda3891849"
+  },
+  "name": "Shea Whigham",
+  "about": "Shea Whigham (born January 5, 1969)[1] is an American actor best known for portraying Elias \"Eli\" Thompson in the drama series Boardwalk Empire. He also appeared in the first season of True Detective and the third season of Fargo and in numerous films, including Take Shelter, Silver Linings Playbook, American Hustle, The Wolf of Wall Street, Kong: Skull Island, First Man, Vice, and Joker. He has appeared as Agent Michael Stasiak in Fast & Furious, Fast & Furious 6, and F9.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689602999/wuhpcijeldvuxqsyhhev.webp",
+    "public_id": "wuhpcijeldvuxqsyhhev"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T14:09:59.758Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T14:09:59.758Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b54ca6a56a19bda3891868"
+  },
+  "name": "Greg Tarzan Davis",
+  "about": "Gregory Davis, Jr. (born September 25, 1993), better known as Greg Tarzan Davis is an American actor. Born in New Orleans he began in theater, moved to Los Angeles, and starting his acting career. In 2022, he played the role of Javy \"Coyote\" Machado in the Top Gun: Maverick film.[1] In 2021, he received a recurring role on ABC's series Grey’s Anatomy. He also had a supporting role in the horror film Tales from the Hood 2 (2018).",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689603238/ywkz4spzjyqb69e1c0sw.png",
+    "public_id": "ywkz4spzjyqb69e1c0sw"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T14:13:59.626Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T14:13:59.626Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b54d21a56a19bda3891891"
+  },
+  "name": "Frederick Schmidt",
+  "about": "Frederick Schmidt is a British actor who has appeared in such films as Mission: Impossible – Fallout (2018) and Angel Has Fallen (2019).",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689603362/io18uahoq1zwrvb1ce24.jpg",
+    "public_id": "io18uahoq1zwrvb1ce24"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T14:16:02.765Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T14:16:02.765Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b54d4ea56a19bda3891894"
+  },
+  "name": "Mariela Garriga",
+  "about": "Mariela Garriga is an actress, producer and screenwriter. She was born and raised in Havana, Cuba where she initially dreamed of becoming an archaeologist. She holds Cuban, Italian and American citizenship and speaks Spanish, Italian and English fluently.",
+  "gender": "female",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689603406/emjtvf8ufmucwwd2ryad.jpg",
+    "public_id": "emjtvf8ufmucwwd2ryad"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T14:16:46.949Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T14:16:46.949Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b54d9aa56a19bda3891897"
+  },
+  "name": "Cary Elwes",
+  "about": "Ivan Simon Cary Elwes is an English actor. He is known for his leading film roles as Westley in The Princess Bride, Robin Hood in Robin Hood: Men in Tights, and Dr. Lawrence Gordon in the Saw film series.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689603482/wdkznnbowl8tqftzexyg.jpg",
+    "public_id": "wdkznnbowl8tqftzexyg"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T14:18:02.717Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T14:18:02.717Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b54dd5a56a19bda389189a"
+  },
+  "name": "Charles Parnell",
+  "about": "Charles Parnell is an American actor. He is best known for being the second actor to portray Police Chief Derek Frye on All My Children. He also portrayed Master Chief Russ Jeter on the TNT show The Last Ship and Solomon \"Warlock\" Bates in Top Gun: Maverick.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689603542/jmszw2nbteaxlfs6nyvr.jpg",
+    "public_id": "jmszw2nbteaxlfs6nyvr"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T14:19:03.057Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T14:19:03.057Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b54e07a56a19bda38918a4"
+  },
+  "name": "Mark Gatiss",
+  "about": "Mark Gatiss is an English actor, comedian, screenwriter, director, producer and novelist. His work includes writing for and acting in the television series Doctor Who, Sherlock, Game of Thrones and Dracula.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689603591/zzgaqtrw2dvfkvf6uvcd.jpg",
+    "public_id": "zzgaqtrw2dvfkvf6uvcd"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T14:19:52.133Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T14:19:52.133Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b54e3aa56a19bda38918a7"
+  },
+  "name": "Indira Varma",
+  "about": "Indira Anne Varma is a British actress and narrator. Her film debut and first major role was in Kama Sutra: A Tale of Love. She has gone on to appear in the television series The Canterbury Tales, Rome, Luther, Human Target, and Game of Thrones.",
+  "gender": "female",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689603643/a94g3zrpkvyy8oofzp7u.jpg",
+    "public_id": "a94g3zrpkvyy8oofzp7u"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T14:20:43.540Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T14:20:43.540Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b54e79a56a19bda38918aa"
+  },
+  "name": "Rob Delaney",
+  "about": "Rob Delaney (born January 19, 1977) is an American comedian, actor, writer, and activist. He was the co-star and co-writer of the TV show Catastrophe, and has appeared in comedy films such as Deadpool 2 (2018) and Tom & Jerry (2021).",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689603706/uhfrbvilxeofcoeqgeze.jpg",
+    "public_id": "uhfrbvilxeofcoeqgeze"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T14:21:46.358Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T14:21:46.358Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b55a7ea56a19bda38918c0"
+  },
+  "name": "Christopher McQuarrie",
+  "about": "Christopher McQuarrie is an American film director, producer and screenwriter. He received the BAFTA Award, Independent Spirit Award, and Academy Award for Best Original Screenplay for the neo-noir mystery film The Usual Suspects. He made his directorial debut with the crime thriller film The Way of the Gun.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689606782/qff5s4wwyxluehghkbzf.jpg",
+    "public_id": "qff5s4wwyxluehghkbzf"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T15:13:03.109Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T15:13:03.109Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b55b2ca56a19bda38918c3"
+  },
+  "name": "Erik Jendresen",
+  "about": "Erik Jendresen is an American author, playwright, screenwriter and producer of plays, television, and film.[1] Previous projects include the HBO miniseries Band of Brothers, executive produced by Steven Spielberg and Tom Hanks, Killing Lincoln, co-produced with Tony and Ridley Scott for the National Geographic Channel; a series based on the Francis Ford Coppola film, The Conversation (with Christopher McQuarrie); The Pony Express (with Robert Duvall); an eight-hour adaptation of Gregory Maguire's novel, Wicked (ABC); an eight-hour miniseries Majestic-12; and The Command - a series set in the world of the Joint Special Operations Command (FIC).",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689606957/wdfeqnibxbagiakksiqx.jpg",
+    "public_id": "wdfeqnibxbagiakksiqx"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T15:15:57.421Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T15:15:57.421Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b55b8ca56a19bda38918c6"
+  },
+  "name": "Bruce Geller",
+  "about": "Bruce Bernard Geller was an American lyricist, screenwriter, director, and television producer.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689607053/jbmu2tgbcwmj1ikficds.jpg",
+    "public_id": "jbmu2tgbcwmj1ikficds"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T15:17:33.627Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T15:17:33.627Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b5b19ec009253cfc29beb1"
+  },
+  "name": "Robin Wright",
+  "about": "Robin Gayle Wright is an American actress and director. She has received various accolades, including a Golden Globe Award, and nominations for eight Primetime Emmy Awards. Wright first gained attention for her role as Kelly Capwell in the NBC Daytime soap opera Santa Barbara from 1984 to 1988.",
+  "gender": "female",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689629087/ghwouwmzf6uxw9yuauz8.jpg",
+    "public_id": "ghwouwmzf6uxw9yuauz8"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T21:24:47.802Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T21:24:47.802Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b5b1e5c009253cfc29beb4"
+  },
+  "name": "Michael Kelly",
+  "about": "Michael Kelly is an American actor. He is best known for his role as Doug Stamper in the Netflix drama series House of Cards. He also appeared as CIA Agent Mike November in the Prime Video thriller series Jack Ryan.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689629158/tti8skgbeqczd30wgnik.jpg",
+    "public_id": "tti8skgbeqczd30wgnik"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T21:25:58.739Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T21:25:58.739Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b5b211c009253cfc29bebb"
+  },
+  "name": "Kevin Spacey",
+  "about": "Kevin Spacey Fowler is an American actor. He began his career as a stage actor during the 1980s, obtaining supporting roles before gaining a leading man status in film and television.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689629201/pahq9ufbk8ix0jotszkl.jpg",
+    "public_id": "pahq9ufbk8ix0jotszkl"
+  },
+  "createdAt": {
+    "$date": "2023-07-17T21:26:42.135Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T21:26:42.135Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6ae3dc009253cfc29bf97"
+  },
+  "name": "Eric Dane",
+  "about": "Eric William Dane (born November 9, 1972)[1] is an American actor. After multiple television roles in the 1990s and 2000s, which included his recurring role as Jason Dean in Charmed, Dane was cast as Dr. Mark Sloan on the ABC medical drama television series Grey's Anatomy. Following this, he made appearances in films such as Marley & Me (2008), Valentine's Day (2010), and Burlesque (2010). Dane has since played Captain Tom Chandler in the post-apocalyptic drama The Last Ship and currently stars as Cal Jacobs in the HBO series Euphoria.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689693758/avruh8xe4khmcdeuoigd.jpg",
+    "public_id": "avruh8xe4khmcdeuoigd"
+  },
+  "createdAt": {
+    "$date": "2023-07-18T15:22:38.928Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T15:22:38.928Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6ae7dc009253cfc29bf9a"
+  },
+  "name": "Adam Baldwin",
+  "about": "Adam Baldwin (born February 27, 1962) is an American actor. He made his film debut in My Bodyguard. (1980) He later appeared in Full Metal Jacket (1987) as Animal Mother, and in the television series Firefly and its continuation film Serenity as Jayne Cobb. His roles include Stillman in Ordinary People (1980), Colonel John Casey in Chuck, and Mike Slattery in The Last Ship.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689693822/h8gnprffzntdmwyzz5yk.jpg",
+    "public_id": "h8gnprffzntdmwyzz5yk"
+  },
+  "createdAt": {
+    "$date": "2023-07-18T15:23:42.585Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T15:23:42.585Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6af1cc009253cfc29bf9f"
+  },
+  "name": "Charles Parnell",
+  "about": "Charles Parnell (born October 26, 1964) is an American actor. He is best known for being the second actor to portray Police Chief Derek Frye on All My Children. He also portrayed Master Chief Russ Jeter on the TNT show The Last Ship and Solomon \"Warlock\" Bates in Top Gun: Maverick.[1]\r\n\r\nParnell took over the role of Frye on All My Children, previously played by actor William Christian. He joined the cast of the show on September 8, 2005, and made his final appearance on September 24, 2007. Parnell also provides the voice of Jefferson Twilight on Cartoon Network's The Venture Bros.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689693981/vd1v3aov7kihroxjvqr5.jpg",
+    "public_id": "vd1v3aov7kihroxjvqr5"
+  },
+  "createdAt": {
+    "$date": "2023-07-18T15:26:21.918Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T15:26:21.918Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6af4bc009253cfc29bfa2"
+  },
+  "name": "Travis Van Winkle",
+  "about": "Travis Scott Van Winkle[1] (born November 4, 1982) is an American actor, best known for starring in the feature film Accepted (2006) and the 2021 third season of the Netflix streaming television series You, portraying Trent DeMarco in Transformers (2007), Trent Sutton in Friday the 13th (2009) and Lieutenant Danny Green in The Last Ship (2014–2018).[2]",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689694027/hlo3mamsek8quxjesv0y.jpg",
+    "public_id": "hlo3mamsek8quxjesv0y"
+  },
+  "createdAt": {
+    "$date": "2023-07-18T15:27:08.405Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T15:27:08.405Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6af7dc009253cfc29bfa5"
+  },
+  "name": "Marissa Neitling",
+  "about": "Marissa Lee Neitling (born May 8, 1984) is an American actress, known for her roles in the TV series The Last Ship (2014-2018) as Kara Foster, and the film San Andreas (2015) as Phoebe.",
+  "gender": "female",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689694077/o2cxeck7kj5hvwhy9xsg.jpg",
+    "public_id": "o2cxeck7kj5hvwhy9xsg"
+  },
+  "createdAt": {
+    "$date": "2023-07-18T15:27:58.682Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T15:27:58.682Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6afb0c009253cfc29bfa8"
+  },
+  "name": "Jocko Sims",
+  "about": "Jocko Sims (born February 20, 1981) is an American actor, known for playing Anthony Adams in Crash and later playing Carlton Burk in the series The Last Ship. On the NBC TV show New Amsterdam, he portrayed Dr. Floyd Reynolds.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689694128/ewz1jo25mweoecoqxwbv.jpg",
+    "public_id": "ewz1jo25mweoecoqxwbv"
+  },
+  "createdAt": {
+    "$date": "2023-07-18T15:28:49.240Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T15:28:49.240Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6b000c009253cfc29bfab"
+  },
+  "name": "Kevin Martin",
+  "about": "A graduate of UCLA acting school, Kevin has been performing since his early stage years back in Chicago, Illinois. Quickly after college graduation, he landed small roles in popular television shows including Desperate Housewives (2004-2014) and NCIS (2003-current). Kevin is known for playing Eric Miller on Michael Bay's TNT action drama, The Last Ship (2014-current).",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689694208/sds0q6x8nwuuhzux36yr.jpg",
+    "public_id": "sds0q6x8nwuuhzux36yr"
+  },
+  "createdAt": {
+    "$date": "2023-07-18T15:30:09.346Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T15:30:09.346Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6b044c009253cfc29bfae"
+  },
+  "name": "Christina Elmore",
+  "about": "Christina Elmore is an American actress, known for her role in the TV series The Last Ship as Lieutenant Alisha Granderson, and her roles on Twenties and HBO's Insecure.",
+  "gender": "female",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689694277/wmxitpogefxducycyauu.png",
+    "public_id": "wmxitpogefxducycyauu"
+  },
+  "createdAt": {
+    "$date": "2023-07-18T15:31:18.562Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T15:31:18.562Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6b29ec009253cfc29bfb5"
+  },
+  "name": "Paul Holahan",
+  "about": "Paul Holahan is an American film, television director, cinematographer, producer and photographer.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689694879/vecohhfdragswmeokhwv.jpg",
+    "public_id": "vecohhfdragswmeokhwv"
+  },
+  "createdAt": {
+    "$date": "2023-07-18T15:41:19.995Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T15:41:19.995Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6b35fc009253cfc29bfb8"
+  },
+  "name": "William  Brinkley",
+  "about": "William Clark Brinkley was an American writer and journalist, best known for his novels Don't Go Near the Water, which Metro-Goldwyn-Mayer adapted to an eponymous 1957 film, and The Last Ship, which TNT adapted as a television series.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689695072/ijdyxep0su9j8nzckgud.jpg",
+    "public_id": "ijdyxep0su9j8nzckgud"
+  },
+  "createdAt": {
+    "$date": "2023-07-18T15:44:32.782Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T15:44:32.782Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6ba2ec009253cfc29c1ad"
+  },
+  "name": "Tim Southam",
+  "about": "Tim Southam has directed series and films. Series highlights include The Walking Dead: Daryl Dixon, American Gods, One Piece, Locke & Key, Lost in Space, NOS4A2, Bates Motel, House, Bones, Hell on Wheels, Animal Kingdom and the four-part miniseries Trudeau: Maverick in the Making.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689696815/z4vy95xdgtyfl4ythtmo.jpg",
+    "public_id": "z4vy95xdgtyfl4ythtmo"
+  },
+  "createdAt": {
+    "$date": "2023-07-18T16:13:35.342Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T16:13:35.342Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6ba5bc009253cfc29c1b0"
+  },
+  "name": "Irwin Allen",
+  "about": "Irwin Allen was an American film and television producer and director, known for his work in science fiction, then later as the \"Master of Disaster\" for his work in the disaster film genre. His most successful productions were The Poseidon Adventure and The Towering Inferno.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689696859/rrt4rzbf7rxajwukjzkn.jpg",
+    "public_id": "rrt4rzbf7rxajwukjzkn"
+  },
+  "createdAt": {
+    "$date": "2023-07-18T16:14:20.233Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T16:14:20.233Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6bc23c009253cfc29c1b3"
+  },
+  "name": "Toby Stephens",
+  "about": "Toby Stephens (born 21 April 1969) is an English actor who has appeared in films in the UK, US and India. He is known for the roles of Bond villain Gustav Graves in the 2002 James Bond film Die Another Day (for which he was nominated for the Saturn Award for Best Supporting Actor), of William Gordon in the 2005 Mangal Pandey: The Rising film, Edward Fairfax Rochester in a BBC television adaptation of Jane Eyre and as Captain Flint in the Starz television series Black Sails. Stephens was one of the leads in the Netflix science fiction series Lost in Space, which began streaming in 2018.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689697315/qlpyllyydpbdilik7pej.jpg",
+    "public_id": "qlpyllyydpbdilik7pej"
+  },
+  "createdAt": {
+    "$date": "2023-07-18T16:21:56.103Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T16:21:56.103Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6bc8fc009253cfc29c1b6"
+  },
+  "name": "Molly Parker",
+  "about": "Molly Parker is a Canadian actress, writer, and director. She garnered critical attention for her portrayal of a necrophiliac medical student in the controversial drama Kissed. She subsequently starred in the television thriller Intensity before landing her first major American film role in the drama Waking the Dead.",
+  "gender": "female",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689697423/i0nhwbl7zqhuv7xv1rzk.jpg",
+    "public_id": "i0nhwbl7zqhuv7xv1rzk"
+  },
+  "createdAt": {
+    "$date": "2023-07-18T16:23:44.158Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T16:23:44.158Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6bcbcc009253cfc29c1b9"
+  },
+  "name": "Maxwell Jenkins",
+  "about": "Maxwell Jenkins (born May 3, 2005) is an American film and television actor, who is known for his roles in Lost in Space, A Family Man, and Sense8.[1][2][3][4] In 2020, he played the role of Joseph Bell in the true story of Joe Bell, starring Mark Wahlberg and directed by Reinaldo Marcus Green.[5] In 2021 he was cast as the young Jack Reacher in the Amazon Prime series.[6]",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689697468/yqnpmcsglrm27gkqulxu.jpg",
+    "public_id": "yqnpmcsglrm27gkqulxu"
+  },
+  "createdAt": {
+    "$date": "2023-07-18T16:24:29.046Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T16:24:29.046Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6bce2c009253cfc29c1bc"
+  },
+  "name": "Taylor McKenzie",
+  "about": "Taylor Russell McKenzie (born July 18, 1994) is a Canadian actress. She has starred in the Netflix science fiction series Lost in Space (2018–2021). In film, she has starred in the critically acclaimed drama Waves (2019), for which she was nominated for the Independent Spirit Award for Best Supporting Female, and the horror film Escape Room (2019) and its 2021 sequel. For starring as a cannibalistic teenager in the road film Bones and All (2022), Russell won the Marcello Mastroianni Award.",
+  "gender": "female",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689697506/jl7otqjl1piznxhritst.jpg",
+    "public_id": "jl7otqjl1piznxhritst"
+  },
+  "createdAt": {
+    "$date": "2023-07-18T16:25:07.286Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T16:25:07.286Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6bd36c009253cfc29c1bf"
+  },
+  "name": "Mina Sundwall",
+  "about": "Sundwall was born on October 24, 2001, in New York City.[citation needed] with Swedish and Italian parents. In 2012 she made her first appearance on television in a season 4 episode of Celebrity Ghost Stories.[5] She appeared in Law & Order: Special Victims Unit in 2014.[6] In 2015, she acted in the romantic comedy-drama Maggie's Plan,[7] the drama Freeheld,[8] and the horror film #Horror.[9] She played the role of Penny Robinson in the Netflix series Lost in Space, which first aired in April 2018.[10]",
+  "gender": "female",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689697591/oteh7zebehvu7i5n0syt.jpg",
+    "public_id": "oteh7zebehvu7i5n0syt"
+  },
+  "createdAt": {
+    "$date": "2023-07-18T16:26:31.788Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T16:26:31.788Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6bf3ac009253cfc29c1e6"
+  },
+  "name": "Ignacio Serricchio",
+  "about": "Ignacio Ariel Serricchio (born April 19, 1982) is an Argentine actor.[1] He is known for his role as Diego Alcazar on General Hospital and as Alejandro \"Alex\" Chavez on The Young and the Restless. Other roles include Lifetime's Witches of East End, seasons 9-12 of Bones, and the Netflix reboot of Lost in Space.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689698106/coed7iylhsst212elwew.jpg",
+    "public_id": "coed7iylhsst212elwew"
+  },
+  "createdAt": {
+    "$date": "2023-07-18T16:35:06.875Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T16:35:06.875Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6bf63c009253cfc29c1e9"
+  },
+  "name": "Parker Posey",
+  "about": "Parker Christian Posey (born November 8, 1968) is an American actress and musician. Posey is the recipient of a Golden Globe Award nomination, a Satellite Award nomination and two Independent Spirit Award nominations.",
+  "gender": "female",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689698148/hcdvwwbtm5laqzfl1fyf.jpg",
+    "public_id": "hcdvwwbtm5laqzfl1fyf"
+  },
+  "createdAt": {
+    "$date": "2023-07-18T16:35:48.516Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T16:35:48.516Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b761a6c009253cfc2a070b"
+  },
+  "name": "Robert Pattinson",
+  "about": "Robert Douglas Thomas Pattinson is an English actor. Known for starring in both big-budget and independent films, Pattinson has ranked among the world's highest-paid actors. In 2010, Time magazine named him one of the 100 most influential people in the world, and he was featured in the Forbes Celebrity 100 list.",
+  "gender": "male",
+  "avatar": {
+    "url": "https://res.cloudinary.com/dvzc9rcsd/image/upload/v1689739688/vbrqhiwwrkzwci5v51gf.jpg",
+    "public_id": "vbrqhiwwrkzwci5v51gf"
+  },
+  "createdAt": {
+    "$date": "2023-07-19T04:08:08.535Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-19T04:08:08.535Z"
+  },
+  "__v": 0
+}]
